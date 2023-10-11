@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
+import SlideShow from "./SlideShow";
 
 const Samagan = () => {
-    return (
-        <div>
-            Samagan
-        </div>
-    );
+  return (
+    <div>
+      <SlideShow />
+    </div>
+  );
 };
 
 export default Samagan;
