@@ -2,6 +2,7 @@
 .bg-brown-500 {
   font-family: Space Grotesk;
 }
+/* src/components/Navbar.css */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -15,13 +16,33 @@
   right: 0;
   z-index: 1000;
   transition: background-color 0.3s;
-  font-family: Space Grotesk;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 .navbar.scrolled {
-  background-color: #fff;
+  background-color: #f8f9fc;
   color: #333;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Добавление тени при скролле */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.right-navbar .MuiSvgIcon-root {
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+  transition: color 0.3s; /* Добавьте этот transition для плавного изменения цвета иконок */
+}
+
+.navbar.scrolled .right-navbar .MuiSvgIcon-root {
+  color: #000; /* Изменяйте на черный цвет при скролле */
+}
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.navbar.scrolled .nav-links a {
+  color: #000;
 }
 
 /* Остальные стили остаются такими же, как в предыдущем ответе */
@@ -36,7 +57,7 @@ nav {
 }
 
 .logo img {
-  width: 15%;
+  width: 150px;
   height: auto;
 }
 

@@ -5,7 +5,7 @@ const Samagan = () => {
   return (
     <div>
       <SlideShow />
-    </div>
+    </div> 
   );
 };
 
