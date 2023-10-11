@@ -1,0 +1,77 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&family=Open+Sans&family=Playfair+Display:ital,wght@0,500;1,400&family=Poppins:wght@300&family=Roboto:wght@700;900&family=Space+Grotesk&display=swap');
+.bg-brown-500 {
+font-family: Space Grotesk;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  padding: 10px 20px;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: background-color 0.3s;
+  font-family: Space Grotesk;
+}
+
+.navbar.scrolled {
+  background-color: #fff;
+  color: #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Добавление тени при скролле */
+}
+
+/* Остальные стили остаются такими же, как в предыдущем ответе */
+/* src/components/Navbar.css */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+  color: #fff;
+}
+
+.logo img {
+  width: 100px;
+  height: auto;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  font-size: 18px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #0e0e0e; /* Измените на цвет по вашему выбору */
+}
+
+.right-navbar {
+  display: flex;
+  gap: 10px;
+}
+
+.right-navbar .MuiSvgIcon-root {
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+}
+
+
+
+
