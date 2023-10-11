@@ -27,6 +27,9 @@ const Navbar = () => {
     };
   }, []);
 
+
+
+
   return (
     <>
       <nav className={scrolled ? "navbar scrolled" : "navbar"}>
