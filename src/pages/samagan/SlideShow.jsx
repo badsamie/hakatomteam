@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import "./SlideShow.module.css";
+import React, { useState, useEffect } from "react";
 
 const SlideShow = () => {
   const [currentSlide, setCurrentSlide] = useState(1);
@@ -17,35 +16,36 @@ const SlideShow = () => {
     );
   };
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      goToNextSlide();
+    }, 4000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+
   return (
-    <div className="slideshow-container">
-      <div
-        className="slide"
-        style={{ display: currentSlide === 1 ? "block" : "none" }}
-      >
-        <video autoPlay muted loop playsInline>
+    <div>
+      <div style={{ display: currentSlide === 1 ? "block" : "none" }}>
+        <video className="w-full h-full" autoPlay muted loop playsInline>
           <source
             src="//video.ralphlauren.com/202308/20230822-prl-heritage-icons-fall-lp/mpolo_heritageicons_hero_dsk.mp4"
             type="video/mp4"
           />
         </video>
       </div>
-      <div
-        className="slide"
-        style={{ display: currentSlide === 2 ? "block" : "none" }}
-      >
-        <video autoPlay muted loop playsInline>
+      <div style={{ display: currentSlide === 2 ? "block" : "none" }}>
+        <video className="w-full h-full" autoPlay muted loop playsInline>
           <source
             src="//video.ralphlauren.com/202310/20231005-mens-lp/PRLxElement-Hero-DSK.mp4"
             type="video/mp4"
           />
         </video>
       </div>
-      <div
-        className="slide"
-        style={{ display: currentSlide === 3 ? "block" : "none" }}
-      >
-        <video autoPlay muted loop playsInline>
+      <div style={{ display: currentSlide === 3 ? "block" : "none" }}>
+        <video className="w-full h-full" autoPlay muted loop playsInline>
           <source
             src="//video.ralphlauren.com/202309/20230914-homepage/20230914 P-Layer_1440x720.mp4"
             type="video/mp4"
@@ -53,10 +53,10 @@ const SlideShow = () => {
         </video>
       </div>
 
-      <button onClick={goToPrevSlide} className="prev-button">
+      <button onClick={goToPrevSlide} className="rlc-buttons">
         Previous
       </button>
-      <button onClick={goToNextSlide} className="next-button">
+      <button onClick={goToNextSlide} className="rlc-buttons">
         Next
       </button>
     </div>
