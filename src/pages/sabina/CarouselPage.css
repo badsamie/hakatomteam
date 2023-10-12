@@ -1,0 +1,13 @@
+.bg-container {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw; 
+    height: 100vh; 
+    z-index: -1; 
+    background-image: url('https://cdn-fsly.yottaa.net/620ab0e7d93140aaa4e17365/www.ralphlauren.global/v~4b.8d/on/demandware.static/-/Library-Sites-RalphLauren_EU_Library/en_KG/v1697008350647/img/202310/10052023-eu-hp/1005_hp_c02_bg.jpg?yocs=4G_4J_4K_4O_');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+  }

@@ -1,8 +1,8 @@
 import React from "react";
 import Samagan from "../pages/samagan/Samagan";
-import Sabina from "../pages/sabina/Sabina";
 import Aisuluu from "../pages/aisuluu/Aisuluu";
 import { Route, Routes } from "react-router-dom";
+import CarouselPage from "../pages/sabina/CarouselPage";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -14,7 +14,7 @@ const MainRoutes = () => {
     {
       id: 2,
       path: "/sabina",
-      element: <Sabina />,
+      element: <CarouselPage />,
     },
     {
       id: 3,
