@@ -2,7 +2,6 @@
 .bg-brown-500 {
   font-family: Space Grotesk;
 }
-/* src/components/Navbar.css */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -29,24 +28,23 @@
   font-size: 24px;
   cursor: pointer;
   color: #fff;
-  transition: color 0.3s; /* Добавьте этот transition для плавного изменения цвета иконок */
+  transition: color 0.3s;
 }
 
 .navbar.scrolled .right-navbar .MuiSvgIcon-root {
-  color: #000; /* Изменяйте на черный цвет при скролле */
+  color: #000;
 }
 .nav-links a {
   text-decoration: none;
   color: #fff;
   transition: color 0.3s;
+  cursor: pointer;
 }
 
 .navbar.scrolled .nav-links a {
   color: #000;
 }
 
-/* Остальные стили остаются такими же, как в предыдущем ответе */
-/* src/components/Navbar.css */
 nav {
   display: flex;
   justify-content: space-between;
@@ -57,7 +55,7 @@ nav {
 }
 
 .logo img {
-  width: 150px;
+  width: 100px;
   height: auto;
 }
 

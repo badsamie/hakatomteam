@@ -4,66 +4,32 @@ import "./Navbar.css";
 const Footer = () => {
   return (
     <footer className="bg-brown-500 text-white">
-      <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="flex justify-center "></div>
-
-        <p className="mx-auto mt-6 max-w-md text-center leading-relaxed font-bold uppercase hover:text-black">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt
-          consequuntur amet culpa cum itaque neque.
-        </p>
-
+      <div className="mx-auto max-w-5xl px-4  sm:px-6 ">
         <ul className="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
           <li>
             <a
               className="text-black transition hover:text-brown hover:text-opacity-75 font-bold uppercase"
               href="/"
             >
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a
+              className="text-black transition hover:text-white hover:text-opacity-75 font-bold uppercase"
+              href="/"
+            >
+              Products
+            </a>
+          </li>
+
+          <li>
+            <a
+              className="text-black transition hover:text-white hover:text-opacity-75 font-bold uppercase"
+              href="/"
+            >
               About
-            </a>
-          </li>
-
-          <li>
-            <a
-              className="text-black transition hover:text-white hover:text-opacity-75 font-bold uppercase"
-              href="/"
-            >
-              Careers
-            </a>
-          </li>
-
-          <li>
-            <a
-              className="text-black transition hover:text-white hover:text-opacity-75 font-bold uppercase"
-              href="/"
-            >
-              History
-            </a>
-          </li>
-
-          <li>
-            <a
-              className="text-black transition hover:text-white hover:text-opacity-75 font-bold uppercase"
-              href="/"
-            >
-              Services
-            </a>
-          </li>
-
-          <li>
-            <a
-              className="text-black transition hover:text-white hover:text-opacity-75 font-bold uppercase"
-              href="/"
-            >
-              Projects
-            </a>
-          </li>
-
-          <li>
-            <a
-              className="text-black transition hover:text-white hover:text-opacity-75 font-bold uppercase"
-              href="/"
-            >
-              Blog
             </a>
           </li>
         </ul>

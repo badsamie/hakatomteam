@@ -2,7 +2,6 @@ import React from "react";
 import Carousel from "./Carousel";
 import "./CarouselPage.css";
 
-
 const CarouselPage = () => {
   const images = [
     "https://i.pinimg.com/564x/37/a8/97/37a8972e88fb8aebab76e152347e0c90.jpg",
@@ -14,13 +13,11 @@ const CarouselPage = () => {
   ];
   return (
     <>
-     <div className="bg-container">
-      <h1 className="text-4xl text-center pt-20">Men's Polo</h1>
-      <Carousel images={images} />
-    </div>
-   
+      <div className="bg-container">
+        <h1 className="text-4xl text-center pt-20">Men's Polo</h1>
+        <Carousel images={images} />
+      </div>
     </>
-   
   );
 };
 

@@ -27,9 +27,6 @@ const Navbar = () => {
     };
   }, []);
 
-
-
-
   return (
     <>
       <nav className={scrolled ? "navbar scrolled" : "navbar"}>
@@ -42,22 +39,13 @@ const Navbar = () => {
         <div className="left-navbar">
           <ul className="nav-links">
             <li>
-              <a onClick={() => navigate("/")} href="/">
-                Home
-              </a>
+              <a onClick={() => navigate("/")}>Home</a>
             </li>
             <li>
-              <a onClick={() => navigate("/sabina")} href="/products">
-                Products
-              </a>
+              <a onClick={() => navigate("/sabina")}>Products</a>
             </li>
             <li>
-              <a onClick={() => navigate("/aisuluu")} href="/about">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="/contact">Contact</a>
+              <a onClick={() => navigate("/aisuluu")}>About</a>
             </li>
           </ul>
         </div>
