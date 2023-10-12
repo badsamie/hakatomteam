@@ -4,12 +4,14 @@ import MainRoutes from "./routing/MainRoutes";
 import Footer from "./components/ui/Footer";
 
 const App = () => {
+  
   return (
     <>
       <Navbar />
       <MainRoutes />
       <Footer/>
     </>
+    
   );
 };
 
