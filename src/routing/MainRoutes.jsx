@@ -1,8 +1,8 @@
 import React from "react";
 import Samagan from "../pages/samagan/Samagan";
-import Aisuluu from "../pages/aisuluu/Aisuluu";
 import { Route, Routes } from "react-router-dom";
-import CarouselPage from "../pages/sabina/CarouselPage";
+import ProductCreatePage from "../pages/ProductCreatePage";
+import ProductPage from "../pages/ProductPage";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -13,13 +13,13 @@ const MainRoutes = () => {
     },
     {
       id: 2,
-      path: "/sabina",
-      element: <CarouselPage />,
+      path: "/products",
+      element: <ProductPage />,
     },
     {
       id: 3,
-      path: "/aisuluu",
-      element: <Aisuluu />,
+      path: "/product-create",
+      element: <ProductCreatePage />,
     },
   ];
 
