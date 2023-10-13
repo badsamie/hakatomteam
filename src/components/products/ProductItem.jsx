@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const ProductItem = () => {
-    return (
-        <div>
-            ProductItem
-        </div>
-    );
+const ProductItem = ({ product }) => {
+  const [isLikedProduct, setIsLikedProduct] = useState(false);
+  const navigate = useNavigate();
+
+  return (
+    <div
+      className="w-72 h-64 bg-slate-500"
+      onClick={() => navigate(`/products/${product.id}`)}
+    >
+      <img src={product.picture} alt="" />
+      <p>${product.price}</p>
+      <p>{product.name}</p>
+      <p>{product.description}</p>
+    </div>
+  );
 };
 
 export default ProductItem;

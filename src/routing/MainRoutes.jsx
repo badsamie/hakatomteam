@@ -1,10 +1,17 @@
 import React from "react";
 import Samagan from "../pages/samagan/Samagan";
-import Aisuluu from "../pages/aisuluu/Aisuluu";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom"
 import CarouselPage from "../pages/sabina/CarouselPage";
 import Register from "../components/account/Register";
 import Login from '../components/account/Login'
+import ProductCreatePage from "../pages/ProductCreatePage";
+import ProductPage from "../pages/ProductPage";
+
+import PayPage from "../pages/PayPage";
+
+import ProductDetailsPage from "../pages/ProductDetailsPage";
+import ProductEditPage from "../pages/ProductEditPage";
+
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -15,13 +22,29 @@ const MainRoutes = () => {
     },
     {
       id: 2,
-      path: "/sabina",
-      element: <CarouselPage />,
+      path: "/products",
+      element: <ProductPage />,
     },
     {
       id: 3,
-      path: "/aisuluu",
-      element: <Aisuluu />,
+      path: "/product-create",
+      element: <ProductCreatePage />,
+    },
+    {
+      id: 4,
+
+      path: "/paypage",
+      element: <PayPage />,
+    },
+    {
+      id: 5,
+      path: "/products/:id",
+      element: <ProductDetailsPage />,
+    },
+    {
+      id: 6,
+      path: "/product-edit/:id",
+      element: <ProductEditPage />,
     },
     {
         id: 4,
