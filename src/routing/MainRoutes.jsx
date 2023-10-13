@@ -9,7 +9,6 @@ import PayPage from "../pages/PayPage";
 import ProductDetailsPage from "../pages/ProductDetailsPage";
 import ProductEditPage from "../pages/ProductEditPage";
 
-
 const MainRoutes = () => {
   const ROUTES = [
     {
@@ -28,19 +27,20 @@ const MainRoutes = () => {
       element: <ProductCreatePage />,
     },
     {
-      id: 7,
+      id: 4,
 
       path: "/paypage",
-      element: <PayPage/>
-
+      element: <PayPage />,
+    },
+    {
+      id: 5,
       path: "/products/:id",
       element: <ProductDetailsPage />,
     },
     {
-      id: 5,
+      id: 6,
       path: "/product-edit/:id",
       element: <ProductEditPage />,
-
     },
   ];
 
