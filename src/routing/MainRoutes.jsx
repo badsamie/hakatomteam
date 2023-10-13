@@ -3,6 +3,8 @@ import Samagan from "../pages/samagan/Samagan";
 import Aisuluu from "../pages/aisuluu/Aisuluu";
 import { Route, Routes } from "react-router-dom";
 import CarouselPage from "../pages/sabina/CarouselPage";
+import Register from "../components/account/Register";
+import Login from '../components/account/Login'
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -21,6 +23,16 @@ const MainRoutes = () => {
       path: "/aisuluu",
       element: <Aisuluu />,
     },
+    {
+        id: 4,
+        path: "/register",
+        element: <Register />
+    },
+    {
+        id: 5,
+        path: '/login',
+        element: <Login />
+    }
   ];
 
   return (
