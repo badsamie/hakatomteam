@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
+import ProductEdit from "../components/products/ProductEdit";
 
 const ProductEditPage = () => {
-    return (
-        <div>
-            ProductEditPage
-        </div>
-    );
+  return (
+    <div>
+      <ProductEdit />
+    </div>
+  );
 };
 
 export default ProductEditPage;
