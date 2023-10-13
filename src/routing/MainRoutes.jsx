@@ -3,8 +3,12 @@ import Samagan from "../pages/samagan/Samagan";
 import { Route, Routes } from "react-router-dom";
 import ProductCreatePage from "../pages/ProductCreatePage";
 import ProductPage from "../pages/ProductPage";
+
+import PayPage from "../pages/PayPage";
+
 import ProductDetailsPage from "../pages/ProductDetailsPage";
 import ProductEditPage from "../pages/ProductEditPage";
+
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -24,7 +28,11 @@ const MainRoutes = () => {
       element: <ProductCreatePage />,
     },
     {
-      id: 4,
+      id: 7,
+
+      path: "/paypage",
+      element: <PayPage/>
+
       path: "/products/:id",
       element: <ProductDetailsPage />,
     },
@@ -32,6 +40,7 @@ const MainRoutes = () => {
       id: 5,
       path: "/product-edit/:id",
       element: <ProductEditPage />,
+
     },
   ];
 
