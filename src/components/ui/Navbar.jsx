@@ -1,4 +1,3 @@
-// src/components/Navbar.js
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
@@ -6,6 +5,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import "./Navbar.css";
+import PersonOffIcon from "@mui/icons-material/PersonOff";
+import { logout, checkUserLogin } from "../../helpers/functions";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -50,8 +51,17 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="right-navbar">
-          <SearchIcon />
-          <PermIdentityIcon />
+          <SearchIcon onClick={() => navigate("")} />
+          {checkUserLogin() ? (
+            <PersonOffIcon
+              onClick={() => {
+                logout();
+                navigate("/");
+              }}
+            />
+          ) : (
+            <PermIdentityIcon onClick={() => navigate("/register")} />
+          )}
           <FavoriteBorderIcon />
           <ShoppingBagIcon />
         </div>

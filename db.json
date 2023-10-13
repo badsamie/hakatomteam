@@ -1,4 +1,14 @@
 {
+
+    "users": [
+        {
+            "username": "Sabina",
+            "userSurname": "Stabekova",
+            "password": 123456
+        }
+    ]
+
+}
   "products": [
     {
       "name": "adalaet",
@@ -18,3 +28,4 @@
     }
   ]
 }
+
