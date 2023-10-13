@@ -12,7 +12,7 @@ const ProductList = () => {
   console.log(products);
 
   return (
-    <div>
+    <div className="flex  mt-48 flex-wrap">
       {products.map((products) => (
         <ProductItem key={products.id} product={products} />
       ))}

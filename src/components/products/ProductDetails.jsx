@@ -24,7 +24,7 @@ const ProductDetails = () => {
       ) : (
         <>
           {oneProduct && (
-            <div className="mt-48">
+            <div className="mt-48 w-56 h-20">
               <img src={oneProduct.picture} alt="" />
               <h3>{oneProduct.name}</h3>
               <p>{oneProduct.description}</p>

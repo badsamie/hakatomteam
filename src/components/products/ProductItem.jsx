@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ProductItem = ({ product }) => {
+  const [isLikedProduct, setIsLikedProduct] = useState(false);
   const navigate = useNavigate();
 
   return (
