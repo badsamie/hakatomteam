@@ -3,6 +3,8 @@ import Samagan from "../pages/samagan/Samagan";
 import { Route, Routes } from "react-router-dom";
 import ProductCreatePage from "../pages/ProductCreatePage";
 import ProductPage from "../pages/ProductPage";
+import ProductDetailsPage from "../pages/ProductDetailsPage";
+import ProductEditPage from "../pages/ProductEditPage";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -20,6 +22,16 @@ const MainRoutes = () => {
       id: 3,
       path: "/product-create",
       element: <ProductCreatePage />,
+    },
+    {
+      id: 4,
+      path: "/products/:id",
+      element: <ProductDetailsPage />,
+    },
+    {
+      id: 5,
+      path: "/product-edit/:id",
+      element: <ProductEditPage />,
     },
   ];
 
