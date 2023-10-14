@@ -7,11 +7,20 @@ import {
 } from "../../store/products/productsActions";
 import { clearOneProductState } from "../../store/products/productSlice";
 import { checkUserLogin } from "../../helpers/functions";
+import {
+  toggleProductToCart,
+  checkProductInCart,
+} from "../../store/cart/cartActions";
+import { useState } from "react";
+import { getCart } from "../../store/cart/cartSlice";
 import CommentCreate from "../comments/CommentCreate";
 import CommentList from "../comments/CommentList";
 
+
 const ProductDetails = () => {
   const { loading, oneProduct } = useSelector((state) => state.products);
+  const { cart } = useSelector((state) => state.cart);
+  const [isProductInCart, setIsProductInCart] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -19,6 +28,15 @@ const ProductDetails = () => {
     dispatch(getOneProduct({ id }));
     return () => dispatch(clearOneProductState());
   }, []);
+
+  useEffect(() => {
+    if (!oneProduct) return;
+    if (checkProductInCart(oneProduct.id)) {
+      setIsProductInCart(true);
+    } else {
+      setIsProductInCart(false);
+    }
+  }, [cart, oneProduct]);
 
   return (
     <>
@@ -33,6 +51,32 @@ const ProductDetails = () => {
               {oneProduct.rating && <h3>Raiting:{oneProduct.rating}</h3>}
               <p>{oneProduct.description}</p>
               <p>${oneProduct.price}</p>
+
+              <button
+                onClick={() => {
+                  navigate(`/product-edit/${oneProduct.id}`);
+                }}
+              >
+                edit{" "}
+              </button>
+              <button
+                onClick={() => {
+                  dispatch(deleteProduct({ id: oneProduct.id }));
+                  navigate("/products");
+                }}
+              >
+                delete{" "}
+              </button>
+              <button
+                className="inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-pink-300 focus:relative"
+                onClick={() => {
+                  toggleProductToCart(oneProduct);
+                  dispatch(getCart());
+                }}
+              >
+                {isProductInCart ? "Remove From Cart" : "Add To Cart"}
+              </button>
+
               <>
                 {checkUserLogin() && <CommentCreate product={oneProduct} />}
                 {oneProduct.comments ? (
@@ -60,6 +104,7 @@ const ProductDetails = () => {
                   </button>
                 </div>
               )}
+
             </div>
           )}
         </>
