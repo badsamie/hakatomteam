@@ -16,7 +16,6 @@ import { getCart } from "../../store/cart/cartSlice";
 import CommentCreate from "../comments/CommentCreate";
 import CommentList from "../comments/CommentList";
 
-
 const ProductDetails = () => {
   const { loading, oneProduct } = useSelector((state) => state.products);
   const { cart } = useSelector((state) => state.cart);
@@ -57,7 +56,7 @@ const ProductDetails = () => {
                   navigate(`/product-edit/${oneProduct.id}`);
                 }}
               >
-                edit{" "}
+                edit
               </button>
               <button
                 onClick={() => {
@@ -65,7 +64,7 @@ const ProductDetails = () => {
                   navigate("/products");
                 }}
               >
-                delete{" "}
+                delete
               </button>
               <button
                 className="inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-pink-300 focus:relative"
@@ -85,26 +84,6 @@ const ProductDetails = () => {
                   <h3>No soska</h3>
                 )}
               </>
-              {checkUserLogin() && (
-                <div>
-                  <button
-                    onClick={() => {
-                      navigate(`/product-edit/${oneProduct.id}`);
-                    }}
-                  >
-                    edit
-                  </button>
-                  <button
-                    onClick={() => {
-                      dispatch(deleteProduct({ id: oneProduct.id }));
-                      navigate("/products");
-                    }}
-                  >
-                    delete
-                  </button>
-                </div>
-              )}
-
             </div>
           )}
         </>

@@ -13,7 +13,7 @@ export const createComment = createAsyncThunk(
     const checkCommentKeyInProduct =
       Object.keys(updatedProductObj).includes("comments");
     if (!checkCommentKeyInProduct) {
-      updatedProductObj.comments = [...commentObj];
+      updatedProductObj.comments = [commentObj];
     } else {
       updatedProductObj.comments = [...productObj.comments, commentObj];
     }
