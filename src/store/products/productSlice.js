@@ -7,7 +7,7 @@ const productSlice = createSlice({
     products: [],
     oneProduct: null,
     currentPage: 1,
-    totalPages: 1,
+    totalPages: 3,
     currentCategory: "",
     search: "",
     categories: [],
