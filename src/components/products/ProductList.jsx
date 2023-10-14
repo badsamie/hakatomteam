@@ -1,21 +1,33 @@
 import React, { useEffect } from "react";
-import ProductItem from "./ProductItem";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../store/products/productsActions";
+import { clearAllFilters } from "../../store/products/productSlice";
+import ProductPagination from "./ProductPagination";
+import ProductItem from "./ProductItem";
 
 const ProductList = () => {
-  const { products } = useSelector((state) => state.products);
+  const { products, loading } = useSelector((state) => state.products);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProducts());
+    dispatch(clearAllFilters());
   }, []);
 
   return (
-    <div className="flex  mt-48 flex-wrap">
-      {products.map((products) => (
-        <ProductItem key={products.id} product={products} />
-      ))}
-    </div>
+    <>
+      {loading ? (
+        <h3>Loading...</h3>
+      ) : (
+        <div className="flex  mt-48 flex-wrap">
+          <ProductPagination />
+          <div>
+            {products.map((products) => (
+              <ProductItem key={products.id} product={products} />
+            ))}
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
