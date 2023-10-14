@@ -1,7 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import accountReducer from "./account/accountSlice";
 import productsReducer from "./products/productSlice";
 import commentsReducer from "./comments/commentSlice";
+import accountReducer from "./account/accountSlice";
+import cartReducer from "./cart/cartSlice";
 
 export default configureStore({
   middleware: (getDefaultMiddleware) =>
@@ -12,5 +13,6 @@ export default configureStore({
     account: accountReducer,
     products: productsReducer,
     comments: commentsReducer,
+    cart: cartReducer,
   },
 });

@@ -37,8 +37,8 @@ function PayPage() {
   };
 
   return (
-    <div className="m-4">
-      <div className="credit-card w-full sm:w-auto shadow-lg mx-auto rounded-xl bg-transparent">
+    <div className="m-4" style={{backgroundImage: "url()"}}>
+      <div className="credit-card w-full sm:w-auto shadow-lg mx-auto rounded-xl bg-darkkhaki">
         <header className="header">
           <div
             className="relative front"

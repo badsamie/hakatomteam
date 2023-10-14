@@ -62,8 +62,13 @@ const Navbar = () => {
           ) : (
             <PermIdentityIcon onClick={() => navigate("/register")} />
           )}
+          {checkUserLogin() ? (
+            <ShoppingBagIcon onClick={() => navigate("/cart")} />
+          ) : (
+            <PermIdentityIcon onClick={() => navigate("/register")} />
+          )}
+
           <FavoriteBorderIcon />
-          <ShoppingBagIcon />
         </div>
       </nav>
     </>

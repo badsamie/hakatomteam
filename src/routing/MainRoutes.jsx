@@ -1,9 +1,9 @@
 import React from "react";
 import Samagan from "../pages/samagan/Samagan";
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes } from "react-router-dom";
 import CarouselPage from "../pages/sabina/CarouselPage";
 import Register from "../components/account/Register";
-import Login from '../components/account/Login'
+import Login from "../components/account/Login";
 import ProductCreatePage from "../pages/ProductCreatePage";
 import ProductPage from "../pages/ProductPage";
 
@@ -11,7 +11,7 @@ import PayPage from "../pages/PayPage";
 
 import ProductDetailsPage from "../pages/ProductDetailsPage";
 import ProductEditPage from "../pages/ProductEditPage";
-
+import CartPage from "../pages/CartPage";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -47,15 +47,20 @@ const MainRoutes = () => {
       element: <ProductEditPage />,
     },
     {
-        id: 4,
-        path: "/register",
-        element: <Register />
+      id: 7,
+      path: "/register",
+      element: <Register />,
     },
     {
-        id: 5,
-        path: '/login',
-        element: <Login />
-    }
+      id: 8,
+      path: "/login",
+      element: <Login />,
+    },
+    {
+      id: 9,
+      path: "/cart",
+      element: <CartPage />,
+    },
   ];
 
   return (
