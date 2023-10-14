@@ -52,8 +52,8 @@ export const getCategories = createAsyncThunk(
   }
 );
 export const toggleProductLike = createAsyncThunk(
-  "product/toggleProductLike",
-  async ({ setIslike, likes, productId }, { dispatch }) => {
+  "products/toggleProductLike",
+  async ({ setIsLike, likes, productId }, { dispatch }) => {
     const user = getAuthUser();
     let updatedLikesArr;
     if (!likes) {
@@ -61,7 +61,8 @@ export const toggleProductLike = createAsyncThunk(
     } else {
       updatedLikesArr = [...likes];
     }
-    if (setIslike) {
+
+    if (setIsLike) {
       updatedLikesArr.push({
         id: Date.now(),
         user,
@@ -72,7 +73,6 @@ export const toggleProductLike = createAsyncThunk(
     await axios.patch(`${PRODUCTS_API}/${productId}`, {
       likes: updatedLikesArr,
     });
-
     dispatch(getProducts());
   }
 );

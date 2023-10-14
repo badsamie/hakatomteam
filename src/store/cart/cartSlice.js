@@ -27,21 +27,3 @@ export const cartSlice = createSlice({
 
 export const { getCart } = cartSlice.actions;
 export default cartSlice.reducer;
-// {
-//     user: 'Jack',
-//     totalCost: 1740,
-//     products: [
-//         {
-//             count: 1,
-//             totalPrice: 580,
-//             productItem: {
-//                 "name": "iPhone 11",
-//                 "description": "12-Мп ",
-//                 "price": 580,
-//                 "picture": "-",
-//                 "type": "electronics",
-//                 "id": 9
-//               }
-//         },
-//     ]
-// }

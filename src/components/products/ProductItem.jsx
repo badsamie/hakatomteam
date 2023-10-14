@@ -17,6 +17,7 @@ const ProductItem = ({ product }) => {
       setIsLikedProduct(false);
     }
   };
+
   useEffect(() => {
     checkProductLike();
   }, []);

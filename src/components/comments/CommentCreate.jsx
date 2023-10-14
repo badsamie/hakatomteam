@@ -13,7 +13,7 @@ const CommentCreate = ({ product }) => {
     if (
       !comment.commentContent.trim() ||
       comment.rating <= 0 ||
-      comment.rating > 5
+      comment.rating > 10
     )
       return alert("change values");
 
