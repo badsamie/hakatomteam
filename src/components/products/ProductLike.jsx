@@ -21,7 +21,7 @@ const ProductLike = ({ isLikedProduct, likes, productId }) => {
             dispatch(toggleProductLike({ setIsLike: true, likes, productId }))
           }
         >
-          <FavoriteIcon fontSize="large" />
+          <FavoriteIcon fontSize="large" color="primary" />
         </div>
       )}
     </>

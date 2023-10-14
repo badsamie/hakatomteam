@@ -9,7 +9,6 @@ const ProductList = () => {
   useEffect(() => {
     dispatch(getProducts());
   }, []);
-  console.log(products);
 
   return (
     <div className="flex  mt-48 flex-wrap">

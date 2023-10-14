@@ -17,7 +17,7 @@ export const createComment = createAsyncThunk(
     } else {
       updatedProductObj.comments = [...productObj.comments, commentObj];
     }
-    updatedProductObj.rating = getOneProduct(updatedProductObj);
+    updatedProductObj.rating = getProductRating(updatedProductObj);
     await axios.patch(
       `${PRODUCTS_API}/${updatedProductObj.id}`,
       updatedProductObj

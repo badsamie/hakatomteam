@@ -1,9 +1,13 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { createProduct } from "../../store/products/productsActions";
+import {
+  createProduct,
+  getCategories,
+} from "../../store/products/productsActions";
 
 const ProductCreate = () => {
+  const { categories } = useSelector((state) => state.products);
   const [product, setProduct] = useState({
     name: "",
     picture: "",
@@ -14,6 +18,9 @@ const ProductCreate = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  useEffect(() => {
+    dispatch(getCategories());
+  }, []);
   return (
     <div className="mt-32 bg-yellow-200">
       <h3>Create Product</h3>
@@ -41,6 +48,16 @@ const ProductCreate = () => {
           setProduct({ ...product, description: e.target.value })
         }
       />
+      <select
+        onChange={(e) => setProduct({ ...product, type: e.target.value })}
+      >
+        <option disabled>chose category</option>
+        {categories.map((category) => (
+          <option key={category} value={category}>
+            {category}
+          </option>
+        ))}
+      </select>
       <button
         onClick={() => {
           dispatch(createProduct({ product }));
