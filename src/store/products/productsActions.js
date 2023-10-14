@@ -1,10 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { PRODUCTS_API } from "../../helpers/consts";
+import { getAuthUser } from "../../helpers/functions";
 
 export const getProducts = createAsyncThunk(
   "products/getProducts",
-  async () => {
+  async (_, { getState }) => {
     const { data } = await axios.get(`${PRODUCTS_API}`);
     return data;
   }
@@ -48,5 +49,32 @@ export const getCategories = createAsyncThunk(
       categories.push(i);
     }
     return categories;
+  }
+);
+export const toggleProductLike = createAsyncThunk(
+  "product/toggleProductLike",
+  async ({ setIslike, likes, productId }, { dispatch }) => {
+    const user = getAuthUser();
+    let updatedLikesArr;
+    if (!likes) {
+      updatedLikesArr = [];
+    } else {
+      updatedLikesArr = [...likes];
+    }
+    if (setIslike) {
+      updatedLikesArr = [...likes];
+    }
+    if (setIslike) {
+      updatedLikesArr.push({
+        id: Date.now(),
+        user,
+      });
+    } else {
+      updatedLikesArr = updatedLikesArr.filter((like) => like.user !== user);
+    }
+    await axios.patch(`${PRODUCTS_API}/${productId}`, {
+      likes: updatedLikesArr,
+    });
+    dispatch(getProducts());
   }
 );
