@@ -13,6 +13,9 @@ import {
 } from "../../store/cart/cartActions";
 import { useState } from "react";
 import { getCart } from "../../store/cart/cartSlice";
+import CommentCreate from "../comments/CommentCreate";
+import CommentList from "../comments/CommentList";
+
 
 const ProductDetails = () => {
   const { loading, oneProduct } = useSelector((state) => state.products);
@@ -45,8 +48,10 @@ const ProductDetails = () => {
             <div className="mt-48 w-56 h-20">
               <img src={oneProduct.picture} alt="" />
               <h3>{oneProduct.name}</h3>
+              {oneProduct.rating && <h3>Raiting:{oneProduct.rating}</h3>}
               <p>{oneProduct.description}</p>
               <p>${oneProduct.price}</p>
+
               <button
                 onClick={() => {
                   navigate(`/product-edit/${oneProduct.id}`);
@@ -71,6 +76,35 @@ const ProductDetails = () => {
               >
                 {isProductInCart ? "Remove From Cart" : "Add To Cart"}
               </button>
+
+              <>
+                {checkUserLogin() && <CommentCreate product={oneProduct} />}
+                {oneProduct.comments ? (
+                  <CommentList comments={oneProduct.comments} />
+                ) : (
+                  <h3>No soska</h3>
+                )}
+              </>
+              {checkUserLogin() && (
+                <div>
+                  <button
+                    onClick={() => {
+                      navigate(`/product-edit/${oneProduct.id}`);
+                    }}
+                  >
+                    edit
+                  </button>
+                  <button
+                    onClick={() => {
+                      dispatch(deleteProduct({ id: oneProduct.id }));
+                      navigate("/products");
+                    }}
+                  >
+                    delete
+                  </button>
+                </div>
+              )}
+
             </div>
           )}
         </>

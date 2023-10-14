@@ -38,3 +38,15 @@ export const getAuthUser = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   return user;
 };
+export const getTotalPages = async (url) => {
+  const { data } = await axios.get(url);
+  const totalPages = Math.ceil(data.length / 12);
+  return totalPages;
+};
+export const getProductRating = (productObj) => {
+  const rating =
+    productObj.comments.reduce((acc, commentObj) => {
+      return acc + commentObj.rating;
+    }, 0) / productObj.comments.length;
+  return rating.toFixed(1);
+};
