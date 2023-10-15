@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container px-6 py-12 mx-auto">
         <div className="text-center">
           <h2 className="text-2xl font-semibold text-gray-800 dark:text-white">
-            Let’s get started on something great
+            ʟᴇᴛ’s ɢᴇᴛ sᴛᴀʀᴛᴇᴅ ᴏɴ sᴏᴍᴇᴛʜɪɴɢ ɢʀᴇᴀᴛ
           </h2>
 
           <div className="flex flex-col mt-6 sm:flex-row sm:items-center sm:justify-center">
@@ -301,18 +301,13 @@ const Footer = () => {
               </a>
             </li>
           </ul>
-          {/* Аналогично для "Company", "Resources", "Use cases" и "Legal" */}
         </div>
 
         <hr className="my-6 border-gray-200 md:my-10 dark:border-gray-700" />
 
         <div className="flex flex-col items-center justify-between sm:flex-row">
           <a href="#">
-            <img
-              className="w-auto h-12"
-              src="https://e1.pxfuel.com/desktop-wallpaper/407/119/desktop-wallpaper-polo-ralph-lauren-logo-vector-ralph-lauren.jpg"
-              alt=""
-            />
+            <p className="text-white">ＲＡＬＰＨ ＬＡＵＲＥＮ</p>
           </a>
           <p className="mt-4 text-sm text-gray-500 sm:mt-0 dark:text-gray-300">
             © ASEL 2023. All Rights Reserved.

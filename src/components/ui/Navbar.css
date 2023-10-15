@@ -54,11 +54,6 @@ nav {
   color: #fff;
 }
 
-.logo img {
-  width: 100px;
-  height: auto;
-}
-
 .nav-links {
   list-style: none;
   display: flex;
@@ -89,3 +84,4 @@ nav {
   cursor: pointer;
   color: #fff;
 }
+/* -------------------- */
