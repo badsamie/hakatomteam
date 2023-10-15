@@ -11,14 +11,14 @@ export const getProducts = createAsyncThunk(
     const categoryAndSearchParams = `q=${search}${
       currentCategory && `&type=${currentCategory}`
     }`;
-    const pagesLimitParams = `?_page=${currentPage}&_limit=10`;
+    const pagesLimitParams = `?_page=${currentPage}&_limit=4`;
     const totalPages = await getTotalPages(
       `${PRODUCTS_API}?${categoryAndSearchParams}${priceRange}${sortByRating}`
     );
     const { data } = await axios.get(
       `${PRODUCTS_API}${pagesLimitParams}&${categoryAndSearchParams}${priceRange}${sortByRating}`
     );
-    return data;
+    return { data, totalPages };
   }
 );
 

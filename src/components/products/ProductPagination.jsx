@@ -8,7 +8,8 @@ import Stack from "@mui/material/Stack";
 const ProductPagination = () => {
   const { currentPage, totalPages } = useSelector((state) => state.products);
   const dispatch = useDispatch();
-  const handleChange = (value) => {
+
+  const handleChange = (event, value) => {
     dispatch(changePage({ page: value }));
     dispatch(getProducts());
   };
