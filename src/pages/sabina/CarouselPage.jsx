@@ -14,7 +14,7 @@ const CarouselPage = () => {
   return (
     <>
       <div className="bg-container">
-        <h1 className="text-4xl text-center pt-20">Men's Polo</h1>
+        <h1 className="text-4xl text-center pt-20">ℳ𝑒𝓃`𝓈 𝒫𝑜𝓁𝑜</h1>
         <Carousel images={images} />
       </div>
     </>

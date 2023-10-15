@@ -1,4 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
+import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+import PauseCircleOutlineSharpIcon from "@mui/icons-material/PauseCircleOutlineSharp";
+import PlayCircleOutlineSharpIcon from "@mui/icons-material/PlayCircleOutlineSharp";
 
 const SlideShow = () => {
   const myVideo = {
@@ -71,21 +74,18 @@ const SlideShow = () => {
       </video>
       <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-between">
         <button onClick={handlePlay} aria-label="play/pause button">
-          {play ? "𝓅𝒶𝓊𝓈𝑒" : "𝓅𝓁𝒶𝓎"}
+          {play ? (
+            <PauseCircleOutlineSharpIcon />
+          ) : (
+            <PlayCircleOutlineSharpIcon />
+          )}
         </button>
         <img
           className="w-1/2"
           src="https://cdn-fsly.yottaa.net/620ab0e7d93140aaa4e17365/www.ralphlauren.global/v~4b.8f/on/demandware.static/-/Library-Sites-RalphLauren_EU_Library/en_KG/v1697057520625/img/Brand_Logo_Library/PURPLE-LABEL/201906_purple_label_white_logo.svg?yocs=4G_4K_4N_4O_"
           alt="Ralph Lauren Logo"
         />
-
-        <button
-          className="bg-opacity-10 text-white  text-xl py-2 px-4 rounded"
-          onClick={handleNext}
-          aria-label="next slide button"
-        >
-          🡆
-        </button>
+        <ArrowCircleRightIcon onClick={handleNext} />
       </div>
     </div>
   );
