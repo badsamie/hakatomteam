@@ -11,10 +11,6 @@
         {
           "id": 1697292525774,
           "user": "asd"
-        },
-        {
-          "id": 1697306387805,
-          "user": "sama122"
         }
       ],
       "comments": [
@@ -34,12 +30,7 @@
       "description": "gvfesd",
       "type": "",
       "id": 2,
-      "likes": [
-        {
-          "id": 1697306465765,
-          "user": "sama122"
-        }
-      ]
+      "likes": []
     },
     {
       "name": "asel",
@@ -155,7 +146,13 @@
       "price": 5521,
       "description": "wdwadwadwad",
       "type": "",
-      "id": 12
+      "id": 12,
+      "likes": [
+        {
+          "id": 1697308011046,
+          "user": "sama122"
+        }
+      ]
     },
     {
       "name": "julak",

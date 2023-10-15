@@ -40,7 +40,7 @@ export const getAuthUser = () => {
 };
 export const getTotalPages = async (url) => {
   const { data } = await axios.get(url);
-  const totalPages = Math.ceil(data.length / 12);
+  const totalPages = Math.ceil(data.length / 4);
   return totalPages;
 };
 export const getProductRating = (productObj) => {

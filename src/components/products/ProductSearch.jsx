@@ -20,10 +20,14 @@ const ProductSearch = () => {
       </label>
       <input
         type="text"
-        onChange={(e) => setSearchValue(e.target.value)}
+        onChange={(e) => {
+          setSearchValue(e.target.value);
+          dispatch(setSearchVal({ search: e.target.value }));
+          dispatch(getProducts());
+        }}
         value={searchValue}
         id="Search"
-        placeholder="Search for"
+        placeholder="Поиск...."
       />
       <span>
         <button
