@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 const Slider = () => {
-
   const images = [
     "https://aniekanudo.com/wp-content/uploads/PRL_01.jpg",
     "https://img.brandshop.ru/cache/products/n/news-slider--polo-ralph-lauren-istoria-brenda-2_1040x695.jpg",
@@ -9,7 +8,6 @@ const Slider = () => {
     "https://www.thefashionisto.com/wp-content/uploads/2018/10/POLO-Ralph-Lauren-Fall-Winter-2018-Campaign-001.jpg",
   ];
   const [activeIndex, setActiveIndex] = useState(0);
-
 
   const nextSlide = () => {
     setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -27,32 +25,30 @@ const Slider = () => {
   }, []);
 
   return (
-    <div className="relative w-screen h-[550px] overflow-hidden ">
+    <div className="relative w-full  h-[400px] overflow-hidden ">
       {images.map((image, index) => (
         <img
           key={index}
           src={image}
           alt=""
-
           className={`absolute w-full h-full object-cover transition-transform duration-1000 transform ${
             index === activeIndex ? "translate-x-0" : "translate-x-full"
-
           }`}
         />
       ))}
 
       <button
         onClick={prevSlide}
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-black p-2 rounded-full"
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10"
       >
-        ←
+        prev
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-black p-2 rounded-full"
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 "
       >
-        →
+        next
       </button>
 
       <div className="absolute bottom-4 left-4 flex space-x-2">

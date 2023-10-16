@@ -44,16 +44,15 @@ const Navbar = () => {
     <>
       <nav className={scrolled ? "navbar scrolled" : "navbar"}>
         <div className="logo">
-          <a>Ralph Lauren</a>
+          <a>ＲＡＬＰＨ ＬＡＵＲＥＮ</a>
         </div>
         <div className="left-navbar">
           <ul className="nav-links text-light">
-          <li>
-  <a onClick={() => navigate("/")} className="text-light">
-    Home
-  </a>
-</li>
-
+            <li>
+              <a onClick={() => navigate("/")} className="text-light">
+                Ｈｏｍｅ
+              </a>
+            </li>
 
             <li className="group relative">
               <a onClick={() => navigate("/products")}>Ｐｒｏｄｕｃｔｓ</a>
@@ -73,7 +72,6 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="right-navbar">
-
           <p>Recognized Text: {recognizedText}</p>
           <SearchIcon onClick={handleVoiceRecognition} />
 

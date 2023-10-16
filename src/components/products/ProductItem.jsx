@@ -35,7 +35,7 @@ const ProductItem = ({ product }) => {
         />
       </div>
 
-      <div className="flex justify-between items-start mt-5 ml-2 w-full ">
+      <div className="flex justify-between items-start mt-5  w-full ">
         <div>
           <p className="font-serif text-lg">{product.name}</p>
           <p className="font-light text-sm">{product.description}</p>

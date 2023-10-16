@@ -62,11 +62,10 @@ const MainRoutes = () => {
       element: <CartPage />,
     },
     {
-        id:10,
-        path: "/slider",
-        element: <Slider />
-    }
-
+      id: 10,
+      path: "/slider",
+      element: <Slider />,
+    },
 
     {
       id: 11,

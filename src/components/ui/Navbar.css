@@ -1,23 +1,23 @@
 /* Общие стили */
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&family=Open+Sans&family=Playfair+Display:ital,wght@0,500;1,400&family=Poppins:wght@300&family=Roboto:wght@700;900&family=Space+Grotesk&display=swap");
-@media (max-width: 321px) and (min-width: 0px),
-       (max-width: 376px) and (min-width: 322px),
-       (max-width: 426px) and (min-width: 377px) {
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: transparent;
-    padding: 10px 20px;
-    color: #fff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    transition: background-color 0.3s;
-    font-family: "Space Grotesk", sans-serif;
-  }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  padding: 10px 20px;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: background-color 0.3s;
+  font-family: "Space Grotesk", sans-serif;
+}
+.logo {
+  font-size: 100%;
 }
 
 .navbar.scrolled {
@@ -97,85 +97,4 @@ nav {
   font-size: 24px;
   cursor: pointer;
   color: #fff;
-}
-
-
-@media (max-width: 321px) {
-  .navbar {
-    padding: 10px;
-    font-size: 14px;
-  }
-
-  .nav-links {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-  }
-
-  .nav-links a {
-    font-size: 12px;
-  }
-
-  .right-navbar .MuiSvgIcon-root {
-    font-size: 18px;
-  }
-  .nav-links li a {
-    font-size: 12px;
-    display: block;
-    text-align: center;
-  }
-}
-
-@media (max-width: 376px) {
-  .navbar {
-    padding: 15px; 
-    font-size: 16px; 
-  }
-
-  .nav-links {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-  }
-
-  .nav-links a {
-    font-size: 14px;
-  }
-
-  .right-navbar .MuiSvgIcon-root {
-    font-size: 14px;
-  }
-
-  .nav-links li a {
-    font-size: 14px;
-    display: block;
-    text-align: center;
-  }
-}
-
-@media (max-width: 426px) {
-  .navbar {
-    padding: 20px; 
-    font-size: 18px;
-  }
-
-  .nav-links {
-    display: flex;
-    flex-direction: row;
-    gap: 20px; 
-  }
-
-  .nav-links a {
-    font-size: 16px;
-  }
-
-  .right-navbar .MuiSvgIcon-root {
-    font-size: 16px;
-  }
-
-  .nav-links li a {
-    font-size: 16px;
-    display: block;
-    text-align: center;
-  }
 }
