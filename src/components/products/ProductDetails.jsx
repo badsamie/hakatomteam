@@ -15,11 +15,15 @@ import { useState } from "react";
 import { getCart } from "../../store/cart/cartSlice";
 import CommentCreate from "../comments/CommentCreate";
 import CommentList from "../comments/CommentList";
+import { toggleProductToFavorites,checkProductInFavorites } from "../../store/favorites/FavoritesAction";
+import { getFavorites } from "../../store/favorites/FavoritesSlice";
 
 const ProductDetails = () => {
   const { loading, oneProduct } = useSelector((state) => state.products);
   const { cart } = useSelector((state) => state.cart);
+    const { favorites } = useSelector((state) => state.favorites);
   const [isProductInCart, setIsProductInCart] = useState(false);
+   const [isProductInFavorites, setIsProductInFavorites] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -36,6 +40,16 @@ const ProductDetails = () => {
       setIsProductInCart(false);
     }
   }, [cart, oneProduct]);
+
+  
+  useEffect(() => {
+    if (!oneProduct) return;
+    if (checkProductInFavorites(oneProduct.id)) {
+      setIsProductInFavorites(true);
+    } else {
+      setIsProductInFavorites(false);
+    }
+  }, [favorites, oneProduct]);
 
   return (
     <>
@@ -74,6 +88,15 @@ const ProductDetails = () => {
                 }}
               >
                 {isProductInCart ? "Remove From Cart" : "Add To Cart"}
+              </button>
+              <button
+                className="inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-pink-300 focus:relative"
+                onClick={() => {
+                  toggleProductToFavorites(oneProduct);
+                  dispatch(getFavorites());
+                }}
+              >
+                {isProductInFavorites ? "Remove From Favorites" : "Add To Favorites"}
               </button>
 
               <>

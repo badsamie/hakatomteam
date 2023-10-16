@@ -12,6 +12,7 @@ import PayPage from "../pages/PayPage";
 import ProductDetailsPage from "../pages/ProductDetailsPage";
 import ProductEditPage from "../pages/ProductEditPage";
 import CartPage from "../pages/CartPage";
+import Favorites from "../components/favorites/Favorites";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -60,6 +61,11 @@ const MainRoutes = () => {
       id: 9,
       path: "/cart",
       element: <CartPage />,
+    },
+    {
+      id: 10,
+      path: "/favorites",
+      element: <Favorites/>
     },
   ];
 

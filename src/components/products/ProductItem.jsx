@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { checkUserLogin, getAuthUser } from "../../helpers/functions";
 import ProductLike from "./ProductLike";
+import Favorites from "../favorites/Favorites";
 
 const ProductItem = ({ product }) => {
   const [isLikedProduct, setIsLikedProduct] = useState(false);
