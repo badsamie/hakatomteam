@@ -19,7 +19,10 @@ const ProductsPriceRangeFilter = () => {
     }
   }, [priceRange]);
   return (
-    <div>
+    <>
+    <h4 className=" font-serif mb-2 uppercase text-sm">price</h4>
+    <div className="flex">
+     
       <input
         type="number"
         placeholder="min"
@@ -27,8 +30,9 @@ const ProductsPriceRangeFilter = () => {
           setPriceRangeVal({ ...priceRangeVal, minPrice: +e.target.value })
         }
         value={priceRangeVal.minPrice}
+        className="text-center border w-16 font-serif h-7"
       />
-      <span>-----------</span>
+      <span>-</span>
       <input
         type="number"
         placeholder="max"
@@ -36,16 +40,19 @@ const ProductsPriceRangeFilter = () => {
           setPriceRangeVal({ ...priceRangeVal, maxPrice: +e.target.value })
         }
         value={priceRangeVal.maxPrice}
+        className="w-16 border text-center font-serif h-7"
       />
       <button
         onClick={() => {
           dispatch(setPriceRangeState(priceRangeVal));
           dispatch(getProducts());
         }}
+        className="border h-7 w-36 font-serif text-sm ml-3"
       >
         check
       </button>
     </div>
+    </>
   );
 };
 
