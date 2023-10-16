@@ -10,7 +10,6 @@ export const registerAccount = createAsyncThunk(
     accountData.append("password", user.password);
     accountData.append("email", user.email )
     const res = await axios.post(`${ACCOUNT_API}/register/`, accountData);
-    console.log(res);
     return { navigate };
   }
 );

@@ -19,6 +19,10 @@
         {
           "id": 1697428472980,
           "user": "sabina"
+        },
+        {
+          "id": 1697435476421,
+          "user": "sam123"
         }
       ],
       "comments": [
@@ -46,6 +50,10 @@
         {
           "id": 1697428471149,
           "user": "sabina"
+        },
+        {
+          "id": 1697435478236,
+          "user": "sam123"
         }
       ]
     },
@@ -78,6 +86,10 @@
         {
           "id": 1697431992174,
           "user": "sabina"
+        },
+        {
+          "id": 1697453816025,
+          "user": "sam123"
         }
       ]
     },
@@ -96,6 +108,10 @@
         {
           "id": 1697428476764,
           "user": "sabina"
+        },
+        {
+          "id": 1697438857566,
+          "user": "sam123"
         }
       ]
     },
@@ -206,6 +222,7 @@
       "description": "Polo Ralph Lauren",
       "type": "cardigan",
       "id": 13
+
     },
     {
       "name": "Sullivan Slim Faded Stretch Jean",
@@ -412,7 +429,8 @@
       "description": "Polo Ralph Lauren",
       "type": "bags",
       "id": 36,
-      "likes": []
+      "likes": [],
+
     }
     
   ],

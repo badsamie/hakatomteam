@@ -1,8 +1,6 @@
 import React, { Suspense } from "react";
-// import ProductList from "../components/products/ProductList";
 import FilterProducts from "./FilterProducts";
 import LoadingIndicator from "./sabina/LoadingIndicator";
-import Slider from "react-slick";
 
 const LazyProductList = React.lazy(() =>
   import("../components/products/ProductList")
@@ -11,7 +9,6 @@ const LazyProductList = React.lazy(() =>
 const ProductPage = () => {
   return (
     <>
-      <Slider />
       <FilterProducts />
       <Suspense
         fallback={
@@ -23,7 +20,6 @@ const ProductPage = () => {
       >
         <LazyProductList />
       </Suspense>
-
     </>
   );
 };
