@@ -1,18 +1,17 @@
 import React from "react";
 import Samagan from "../pages/samagan/Samagan";
 import { Route, Routes } from "react-router-dom";
-import CarouselPage from "../pages/sabina/CarouselPage";
 import Register from "../components/account/Register";
 import Login from "../components/account/Login";
 import ProductCreatePage from "../pages/ProductCreatePage";
 import ProductPage from "../pages/ProductPage";
-
 import PayPage from "../pages/PayPage";
-
 import ProductDetailsPage from "../pages/ProductDetailsPage";
 import ProductEditPage from "../pages/ProductEditPage";
 import CartPage from "../pages/CartPage";
-import { Slider } from "@mui/material";
+
+import Slider from "../pages/sabina/Slider";
+import Speach from "../components/games/Speach";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -67,6 +66,13 @@ const MainRoutes = () => {
         path: "/slider",
         element: <Slider />
     }
+
+
+    {
+      id: 11,
+      path: "/speach",
+      element: <Speach />,
+    },
   ];
 
   return (

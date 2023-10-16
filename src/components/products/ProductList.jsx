@@ -16,7 +16,9 @@ const ProductList = () => {
   }, []);
 
   return (
-    <>
+    <div
+      className="flex-block align-center"
+    >
       {loading ? (
         <LoadingIndicator />
       ) : (
@@ -30,7 +32,7 @@ const ProductList = () => {
           <ProductPagination />
         </>
       )}
-    </>
+    </div>
   );
 };
 

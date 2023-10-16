@@ -5,11 +5,9 @@ const Footer = () => {
     <footer className="bg-black ">
       <div className="container px-6 py-12 mx-auto">
         <div className="text-center">
-
-          <h1 className="text-4xl font-serif uppercase tracking-widest text-gray-800 dark:text-white " >
-            Ralph Lauren
+          <h1 className="text-4xl font-serif uppercase tracking-widest dark:text-white  text-gray-400">
+            Ｍｏｒｅ ｔｏ Ｅｘｐｌｏｒｅ
           </h1>
-
 
           <div className="flex flex-col mt-6 sm:flex-row sm:items-center sm:justify-center">
             <button className="w-full px-5 py-2 text-sm font-light  tracking-wide text-white uppercase transition-colors duration-300 transform bg-gray-800  sm:mx-2 sm:order-2 sm:w-auto hover:bg-white hover:text-black  focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">

@@ -11,7 +11,19 @@ import { logout, checkUserLogin } from "../../helpers/functions";
 const Navbar = () => {
   const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
-
+  // !-----------------------------------voice
+  const [recognizedText, setRecognizedText] = useState("");
+  const handleVoiceRecognition = () => {
+    const recognition = new (window.SpeechRecognition ||
+      window.webkitSpeechRecognition)();
+    recognition.lang = "en-US";
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      setRecognizedText(transcript);
+    };
+    recognition.start();
+  };
+  // !-----------------------------------vouce
   const handleScroll = () => {
     if (window.scrollY > 20) {
       setScrolled(true);
@@ -32,38 +44,39 @@ const Navbar = () => {
     <>
       <nav className={scrolled ? "navbar scrolled" : "navbar"}>
         <div className="logo">
-          <a>ＲＡＬＰＨ ＬＡＵＲＥＮ</a>
+          <a>Ralph Lauren</a>
         </div>
         <div className="left-navbar">
           <ul className="nav-links text-light">
-            <li>
-              <a onClick={() => navigate("/")}>Ｈｏｍｅ</a>
-            </li>
+          <li>
+  <a onClick={() => navigate("/")} className="text-light">
+    Home
+  </a>
+</li>
+
 
             <li className="group relative">
-              <a onClick={() => navigate("/products")}>Products</a>
+              <a onClick={() => navigate("/products")}>Ｐｒｏｄｕｃｔｓ</a>
               <div className="absolute left-0 mt-2 w-48 bg-white text-black p-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition ease-in-out duration-200  ">
-                {/* <a href="#sublink1" onClick={() => navigate("/product1")} className="text-light lowercase">
-                  Subproduct 1
-                </a> */}
                 <p className="text-light lowercase">men</p>
                 <hr />
                 <p className="text-light lowercase ">women</p>
                 <hr />
                 <p>kids</p>
-                {/* <a href="#sublink2" onClick={() => navigate("/product2")}>
-                  Subproduct 2
-                </a> */}
               </div>
             </li>
-            <li>
-              <a onClick={() => navigate("/product-create")}>create</a>
-
-            </li>
+            {checkUserLogin() && (
+              <li>
+                <a onClick={() => navigate("/product-create")}>Ｃｒｅａｔｅ</a>
+              </li>
+            )}
           </ul>
         </div>
         <div className="right-navbar">
-          <SearchIcon onClick={() => navigate("/products")} />
+
+          <p>Recognized Text: {recognizedText}</p>
+          <SearchIcon onClick={handleVoiceRecognition} />
+
           {checkUserLogin() ? (
             <PersonOffIcon
               onClick={() => {
