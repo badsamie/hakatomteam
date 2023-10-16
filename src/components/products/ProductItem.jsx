@@ -23,7 +23,7 @@ const ProductItem = ({ product }) => {
   }, []);
 
   return (
-    <div className="w-1/3 flex flex-col mb-9 ">
+    <div className="w-1/3 flex flex-col mb-9 px-0.5">
       <div
         onClick={() => navigate(`/products/${product.id}`)}
         className="w-full h-auto overflow-hidden relative cursor-pointer"
@@ -35,7 +35,7 @@ const ProductItem = ({ product }) => {
         />
       </div>
 
-      <div className="flex justify-between items-start mt-2 w-full">
+      <div className="flex justify-between items-start mt-5 ml-2 w-full ">
         <div>
           <p className="font-serif text-lg">{product.name}</p>
           <p className="font-light text-sm">{product.description}</p>

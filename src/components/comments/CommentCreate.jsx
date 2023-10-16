@@ -31,29 +31,32 @@ const CommentCreate = ({ product }) => {
   };
 
   return (
-    <>
+    <div className="flex justify-evenly mt-24">
       <input
         type="text"
         onChange={(e) =>
           setComment({ ...comment, commentContent: e.target.value })
         }
         value={comment.commentContent}
-        placeholder="enter comment soska"
+        placeholder="enter your comment"
+        className="border font-light w-48 text-center"
       />
       <input
         type="number"
         onChange={(e) => setComment({ ...comment, rating: +e.target.value })}
         value={comment.rating}
-        placeholder="enter rating soska"
+        placeholder="enter your rating "
+        className="border font-light w-48 text-center"
       />
       <button
         onClick={() => {
           addComment();
         }}
+        className="text-white bg-black w-24 font-light uppercase text-xs"
       >
         send
       </button>
-    </>
+    </div>
   );
 };
 

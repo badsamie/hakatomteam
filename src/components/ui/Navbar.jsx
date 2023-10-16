@@ -73,6 +73,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="right-navbar">
+
           <p>Recognized Text: {recognizedText}</p>
           <SearchIcon onClick={handleVoiceRecognition} />
 

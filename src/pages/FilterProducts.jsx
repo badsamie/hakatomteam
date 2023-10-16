@@ -13,7 +13,7 @@ const FilterProducts = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="mt-36 relative">
+    <div className="mt-12 relative">
       <button
         onClick={() => setSidebarVisible(!isSidebarVisible)}
         className=" border text-black font-light uppercase w-48 h-9 hover:text-white hover:bg-black"
@@ -29,7 +29,7 @@ const FilterProducts = () => {
       }
       
       <div 
-         className={`fixed top-25 right-0 w-1/6  bg-white p-5 transition-transform duration-500 ease-in-out transform ${isSidebarVisible ? 'translate-x-0' : 'translate-x-full'} z-30`}
+         className={`fixed top-48 right-0 w-1/6  bg-white p-5 transition-transform duration-500 ease-in-out transform ${isSidebarVisible ? 'translate-x-0' : 'translate-x-full'} z-30`}
          >
       <h1 className="text-black  font-serif text-center uppercase mb-5 text-lg">
             Filter & sort
