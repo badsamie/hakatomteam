@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { checkUserLogin, getAuthUser } from "../../helpers/functions";
 import ProductLike from "./ProductLike";
+import Favorites from "../favorites/Favorites";
 
 const ProductItem = ({ product }) => {
   const [isLikedProduct, setIsLikedProduct] = useState(false);
@@ -43,12 +44,14 @@ const ProductItem = ({ product }) => {
         </div>
 
         <div className="ml-5 mr-2 flex items-center flex-col ">
-          {checkUserLogin() && (
+          {checkUserLogin() ? (
             <ProductLike
               isLikedProduct={isLikedProduct}
               likes={product.likes}
               productId={product.id}
             />
+          ) : (
+            <ProductLike />
           )}
           {product.likes ? (
             <span className="text-sm ml-0.5">{product.likes.length}</span>

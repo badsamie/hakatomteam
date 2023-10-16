@@ -9,6 +9,7 @@ import PayPage from "../pages/PayPage";
 import ProductDetailsPage from "../pages/ProductDetailsPage";
 import ProductEditPage from "../pages/ProductEditPage";
 import CartPage from "../pages/CartPage";
+import Favorites from "../components/favorites/Favorites";
 
 import Slider from "../pages/sabina/Slider";
 import Speach from "../components/games/Speach";
@@ -66,9 +67,14 @@ const MainRoutes = () => {
       path: "/slider",
       element: <Slider />,
     },
-
     {
       id: 11,
+      path: "/favorites",
+      element: <Favorites />,
+    },
+
+    {
+      id: 12,
       path: "/speach",
       element: <Speach />,
     },
