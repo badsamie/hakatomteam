@@ -7,11 +7,19 @@ import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import "./Navbar.css";
 import PersonOffIcon from "@mui/icons-material/PersonOff";
 import { logout, checkUserLogin } from "../../helpers/functions";
+import MicIcon from "@mui/icons-material/Mic";
+import { useDispatch, useSelector } from "react-redux";
+import { setSearchVal } from "../../store/products/productSlice";
+import { getProducts } from "../../store/products/productsActions";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
-  // !-----------------------------------voice
+  // !--------------------------voice
+  const { search } = useSelector((state) => state.products);
+  const [searchValue, setSearchValue] = useState("");
+  const dispactch = useDispatch();
+
   const [recognizedText, setRecognizedText] = useState("");
   const handleVoiceRecognition = () => {
     const recognition = new (window.SpeechRecognition ||
@@ -23,7 +31,21 @@ const Navbar = () => {
     };
     recognition.start();
   };
-  // !-----------------------------------vouce
+
+  useEffect(() => {
+    if (!search) {
+      setSearchValue("");
+    }
+  }, [search]);
+  const handleInputChange = (value) => {
+    setSearchValue(value);
+  };
+  useEffect(() => {
+    // Устанавливаем recognizedText как начальное значение в поле ввода
+    setSearchValue(recognizedText);
+  }, [recognizedText]);
+  // !--------------------------voice
+
   const handleScroll = () => {
     if (window.scrollY > 20) {
       setScrolled(true);
@@ -73,9 +95,15 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="right-navbar">
-          <p>Recognized Text: {recognizedText}</p>
-          <SearchIcon onClick={handleVoiceRecognition} />
-
+          <input className="" type="text" onChange={handleInputChange} value={searchValue} />
+          <MicIcon onClick={handleVoiceRecognition} />
+          <SearchIcon
+            onClick={() => {
+              dispactch(setSearchVal({ search: searchValue }));
+              dispactch(getProducts());
+              navigate("/products");
+            }}
+          />
           {checkUserLogin() ? (
             <PersonOffIcon
               onClick={() => {

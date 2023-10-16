@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import "./PayPage.css"; // Импорт файлов стилей
+import "./PayPage.css";
+import { useNavigate } from "react-router";
+
 function PayPage() {
   const [cardholder, setCardholder] = useState("");
   const [cardNumber, setCardNumber] = useState("");
@@ -7,6 +9,8 @@ function PayPage() {
   const [expiredYear, setExpiredYear] = useState("");
   const [securityCode, setSecurityCode] = useState("");
   const [cardSide, setCardSide] = useState("front");
+
+  const navigate = useNavigate();
 
   const formatCardNumber = (input) => {
     if (input.length > 18) {
@@ -37,7 +41,7 @@ function PayPage() {
   };
 
   return (
-    <div className="m-4" style={{backgroundImage: "url()"}}>
+    <div className="m-4" style={{ backgroundImage: "url()" }}>
       <div className="credit-card w-full sm:w-auto shadow-lg mx-auto rounded-xl bg-darkkhaki">
         <header className="header">
           <div
