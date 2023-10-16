@@ -53,12 +53,18 @@
 
 
 .cart-item-remove {
-  background: #243e28;
+  background: black;
   color: #fff;
   border: none;
   padding: 0.25rem 0.5rem;
   cursor: pointer;
   margin-top: 0.5rem;
+  text-transform: uppercase;
+  font-family:unset;
+}
+.cart-item-remove:hover {
+  background: transparent;
+  color: black;
 }
 
 
@@ -81,7 +87,7 @@
 
 
 .cart-empty-button {
-  background: #21442f;
+  background: black;
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
@@ -107,18 +113,27 @@
 
 
 .cart-order-button {
-  background: #2f5b39;
+  background: black;
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  text-transform: uppercase;
+}
+.cart-clean-button:hover{
+  background: transparent;
+  color: black;
+}
+.cart-order-button:hover {
+  background: transparent;
+  color: black;
 }
 
-
 .cart-clean-button {
-  background: #3b7945;
+  background: black;
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  text-transform: uppercase;
 }

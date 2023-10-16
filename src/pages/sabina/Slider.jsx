@@ -1,35 +1,60 @@
 import React, { useState, useEffect } from "react";
 
-const images = [
-  "https://www.ralphlauren.global/on/demandware.static/-/Library-Sites-RalphLauren_EU_Library/en_KG/v1697267275258/img/202309/09142023-eu-m-polo-originals-chapter-1/0914_m_polo_originals_chapter_1_feat_c07_img.jpg",
-  "https://cdn-fsly.yottaa.net/620ab0e7d93140aaa4e173…19_purple_label_blp_c01_img.jpg?yocs=4G_4K_4N_4O_",
-];
-
 const Slider = () => {
+
+  const images = [
+    "https://aniekanudo.com/wp-content/uploads/PRL_01.jpg",
+    "https://img.brandshop.ru/cache/products/n/news-slider--polo-ralph-lauren-istoria-brenda-2_1040x695.jpg",
+    "https://robbreport.com/wp-content/uploads/2022/09/polo-originals-1.jpg?w=1000",
+    "https://www.thefashionisto.com/wp-content/uploads/2018/10/POLO-Ralph-Lauren-Fall-Winter-2018-Campaign-001.jpg",
+  ];
   const [activeIndex, setActiveIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000);
 
+  const nextSlide = () => {
+    setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setActiveIndex(
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+    );
+  };
+
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 5000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="w-screen relative overflow-hidden h-[400px]">
+    <div className="relative w-screen h-[550px] overflow-hidden ">
       {images.map((image, index) => (
         <img
           key={index}
           src={image}
           alt=""
-          className={`absolute w-full h-full object-cover transition-transform duration-1000 ${
-            index === activeIndex
-              ? "transform translate-x-0"
-              : "transform translate-x-full"
+
+          className={`absolute w-full h-full object-cover transition-transform duration-1000 transform ${
+            index === activeIndex ? "translate-x-0" : "translate-x-full"
+
           }`}
         />
       ))}
+
+      <button
+        onClick={prevSlide}
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-black p-2 rounded-full"
+      >
+        ←
+      </button>
+
+      <button
+        onClick={nextSlide}
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-black p-2 rounded-full"
+      >
+        →
+      </button>
+
       <div className="absolute bottom-4 left-4 flex space-x-2">
         {images.map((_, index) => (
           <div

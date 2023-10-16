@@ -1,21 +1,23 @@
+/* Общие стили */
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&family=Open+Sans&family=Playfair+Display:ital,wght@0,500;1,400&family=Poppins:wght@300&family=Roboto:wght@700;900&family=Space+Grotesk&display=swap");
-.bg-brown-500 {
-  font-family: Space Grotesk;
-}
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: transparent;
-  padding: 10px 20px;
-  color: #fff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  transition: background-color 0.3s;
-  font-family: "Space Grotesk", sans-serif;
+@media (max-width: 321px) and (min-width: 0px),
+       (max-width: 376px) and (min-width: 322px),
+       (max-width: 426px) and (min-width: 377px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 10px 20px;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: background-color 0.3s;
+    font-family: "Space Grotesk", sans-serif;
+  }
 }
 
 .navbar.scrolled {
@@ -24,6 +26,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Стили для правой части навбара */
 .right-navbar .MuiSvgIcon-root {
   font-size: 24px;
   cursor: pointer;
@@ -31,9 +34,7 @@
   transition: color 0.3s;
 }
 
-.navbar.scrolled .right-navbar .MuiSvgIcon-root {
-  color: #000;
-}
+/* Стили для ссылок в навбаре */
 .nav-links a {
   text-decoration: none;
   color: #fff;
@@ -41,10 +42,16 @@
   cursor: pointer;
 }
 
+/* Стили для навбара с прокруткой */
+.navbar.scrolled .right-navbar .MuiSvgIcon-root {
+  color: #000;
+}
+
 .navbar.scrolled .nav-links a {
   color: #000;
 }
 
+/* Стили для нижнего блока навбара */
 nav {
   display: flex;
   justify-content: space-between;
@@ -54,16 +61,19 @@ nav {
   color: #fff;
 }
 
+/* Стили для списков ссылок */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
 }
 
+/* Стили для элементов списка */
 .nav-links li {
   font-size: 18px;
 }
 
+/* Стили для ссылок в списке */
 .nav-links a {
   text-decoration: none;
   color: #fff;
@@ -71,11 +81,13 @@ nav {
   text-transform: uppercase;
 }
 
+/* Стили для ссылок при наведении */
 .nav-links a:hover {
   color: #0e0e0e;
   text-decoration: underline;
 }
 
+/* Стили для правой части навбара с иконками */
 .right-navbar {
   display: flex;
   gap: 10px;
@@ -86,4 +98,84 @@ nav {
   cursor: pointer;
   color: #fff;
 }
-/* -------------------- */
+
+
+@media (max-width: 321px) {
+  .navbar {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .right-navbar .MuiSvgIcon-root {
+    font-size: 18px;
+  }
+  .nav-links li a {
+    font-size: 12px;
+    display: block;
+    text-align: center;
+  }
+}
+
+@media (max-width: 376px) {
+  .navbar {
+    padding: 15px; 
+    font-size: 16px; 
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .right-navbar .MuiSvgIcon-root {
+    font-size: 14px;
+  }
+
+  .nav-links li a {
+    font-size: 14px;
+    display: block;
+    text-align: center;
+  }
+}
+
+@media (max-width: 426px) {
+  .navbar {
+    padding: 20px; 
+    font-size: 18px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; 
+  }
+
+  .nav-links a {
+    font-size: 16px;
+  }
+
+  .right-navbar .MuiSvgIcon-root {
+    font-size: 16px;
+  }
+
+  .nav-links li a {
+    font-size: 16px;
+    display: block;
+    text-align: center;
+  }
+}
