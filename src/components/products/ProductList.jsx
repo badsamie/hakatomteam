@@ -5,6 +5,8 @@ import { clearAllFilters } from "../../store/products/productSlice";
 import ProductPagination from "./ProductPagination";
 import ProductItem from "./ProductItem";
 
+import LoadingIndicator from "../../pages/sabina/LoadingIndicator";
+
 const ProductList = () => {
   const { products, loading } = useSelector((state) => state.products);
   const dispatch = useDispatch();
@@ -16,16 +18,17 @@ const ProductList = () => {
   return (
     <>
       {loading ? (
-        <h3>Loading...</h3>
+        <LoadingIndicator />
       ) : (
-        <div className="flex  mt-48 flex-wrap">
+        <>
           <ProductPagination />
-          <div>
+          <div className="flex flex-wrap justify-between">
             {products.map((products) => (
               <ProductItem key={products.id} product={products} />
             ))}
           </div>
-        </div>
+          <ProductPagination />
+        </>
       )}
     </>
   );

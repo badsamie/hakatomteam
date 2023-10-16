@@ -73,10 +73,12 @@ nav {
   text-decoration: none;
   color: #fff;
   transition: color 0.3s;
+  text-transform: uppercase;
 }
 
 .nav-links a:hover {
   color: #0e0e0e;
+  text-decoration: underline;
 }
 
 .right-navbar {

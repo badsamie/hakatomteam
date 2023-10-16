@@ -4,24 +4,16 @@ import { PRODUCTS_API } from "../../helpers/consts";
 import { getAuthUser, getTotalPages } from "../../helpers/functions";
 
 export const getProducts = createAsyncThunk(
-  "products/getProducts",
+  'products/getProducts',
   async (_, { getState }) => {
-    const { currentPage, currentCategory, search, sortByRating, priceRange } =
-      getState().products;
-    const categoryAndSearchParams = `q=${search}${
-      currentCategory && `&type=${currentCategory}`
-    }`;
-    const pagesLimitParams = `?_page=${currentPage}&_limit=10`;
-    const totalPages = await getTotalPages(
-      `${PRODUCTS_API}?${categoryAndSearchParams}${priceRange}${sortByRating}`
-    );
-    const { data } = await axios.get(
-      `${PRODUCTS_API}${pagesLimitParams}&${categoryAndSearchParams}${priceRange}${sortByRating}`
-    );
-    return data;
+      const { currentPage, currentCategory, search, sortByRating, priceRange } = getState().products;
+      const categoryAndSearchParams = `q=${search}${currentCategory && `&type=${currentCategory}`}`;
+      const pagesLimitParams = `?_page=${currentPage}&_limit=6`;
+      const totalPages = await getTotalPages(`${PRODUCTS_API}?${categoryAndSearchParams}${priceRange}${sortByRating}`);
+      const { data } = await axios.get(`${PRODUCTS_API}${pagesLimitParams}&${categoryAndSearchParams}${priceRange}${sortByRating}`);
+      return  data;
   }
 );
-
 export const createProduct = createAsyncThunk(
   "products/createProduct",
   async ({ product }, { dispatch }) => {

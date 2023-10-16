@@ -23,32 +23,41 @@ const ProductItem = ({ product }) => {
   }, []);
 
   return (
-    <>
-      <div className="w-72 h-64 bg-slate-500">
+    <div className="w-1/3 flex flex-col mb-9 ">
+      <div
+        onClick={() => navigate(`/products/${product.id}`)}
+        className="w-full h-auto overflow-hidden relative cursor-pointer"
+      >
         <img
-          onClick={() => navigate(`/products/${product.id}`)}
           src={product.picture}
           alt=""
+          className="w-full h-full transition-transform duration-200 transform hover:scale-105"
         />
-        <p>${product.price}</p>
-        <p>{product.name}</p>
-        <p>{product.description}</p>
       </div>
-      <div>
-        {checkUserLogin() && (
-          <ProductLike
-            isLikedProduct={isLikedProduct}
-            likes={product.likes}
-            productId={product.id}
-          />
-        )}
-        {product.likes ? (
-          <span className="text-xl">{product.likes.length}</span>
-        ) : (
-          <span className="text-xl">0</span>
-        )}
+
+      <div className="flex justify-between items-start mt-2 w-full">
+        <div>
+          <p className="font-serif text-lg">{product.name}</p>
+          <p className="font-light text-sm">{product.description}</p>
+          <p className="font-light text-base mt-2">KGS {product.price}</p>
+        </div>
+
+        <div className="ml-5 mr-2 flex items-center flex-col ">
+          {checkUserLogin() && (
+            <ProductLike
+              isLikedProduct={isLikedProduct}
+              likes={product.likes}
+              productId={product.id}
+            />
+          )}
+          {product.likes ? (
+            <span className="text-sm ml-0.5">{product.likes.length}</span>
+          ) : (
+            <span className="text-sm ml-0.5">0</span>
+          )}
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

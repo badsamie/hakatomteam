@@ -8,7 +8,7 @@ const Samagan = () => {
     <div>
       <SlideShow />
       <CarouselPage />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

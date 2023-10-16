@@ -5,9 +5,9 @@ const Footer = () => {
     <footer className="bg-black ">
       <div className="container px-6 py-12 mx-auto">
         <div className="text-center">
-          <h2 className="text-2xl font-semibold text-gray-800 dark:text-white">
-            Let’s get started on something great
-          </h2>
+          <h1 className="text-4xl font-serif uppercase tracking-widest text-gray-800 dark:text-white " >
+            Ralph Lauren
+          </h1>
 
           <div className="flex flex-col mt-6 sm:flex-row sm:items-center sm:justify-center">
             <button className="w-full px-5 py-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-900 rounded-md sm:mx-2 sm:order-2 sm:w-auto hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">

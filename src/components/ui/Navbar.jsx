@@ -38,15 +38,28 @@ const Navbar = () => {
           />
         </div>
         <div className="left-navbar">
-          <ul className="nav-links">
+          <ul className="nav-links text-light">
             <li>
               <a onClick={() => navigate("/")}>Home</a>
             </li>
-            <li>
+            <li className="group relative">
               <a onClick={() => navigate("/products")}>Products</a>
+              <div className="absolute left-0 mt-2 w-48 bg-white text-black p-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition ease-in-out duration-200  ">
+                {/* <a href="#sublink1" onClick={() => navigate("/product1")} className="text-light lowercase">
+                  Subproduct 1
+                </a> */}
+                <p className="text-light lowercase">men</p>
+                <hr />
+                <p className="text-light lowercase ">women</p>
+                <hr />
+                <p>kids</p>
+                {/* <a href="#sublink2" onClick={() => navigate("/product2")}>
+                  Subproduct 2
+                </a> */}
+              </div>
             </li>
             <li>
-              <a onClick={() => navigate("/product-create")}>About</a>
+              <a onClick={() => navigate("/product-create")}>create</a>
             </li>
           </ul>
         </div>
