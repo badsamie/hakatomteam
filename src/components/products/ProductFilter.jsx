@@ -30,6 +30,7 @@ const ProductFilter = () => {
 
   return (
     <div>
+      <h4 className="font-serif mt-3 uppercase text-sm mb-3">categories</h4>
       <select onChange={(e) => setCategory(e.target.value)} value={category}>
         <option value="all">all</option>
         {categories.map((category) => (

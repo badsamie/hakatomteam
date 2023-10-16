@@ -17,11 +17,15 @@ const ProductsRatingSort = () => {
     }
   }, [sortByRating]);
   return (
-    <select onChange={(e) => setSortBy(e.target.value)} value={sortBy}>
-      <option value="">no soska</option>
-      <option value="asc">из большего к мень</option>
-      <option value="desc">из мень в большему</option>
+    <div className="flex">
+    <h4 className="uppercase font-serif text-sm mt-3 mb-3 ">sort by:</h4>
+     <select onChange={(e) => setSortBy(e.target.value)} value={sortBy} className="ml-16">
+      <option value="" className="text-center">no sort</option>
+      <option value="asc">⬆ ⇾ ⇩</option>
+      <option value="desc">⇩ ⇽ ⬆</option>
     </select>
+    </div>
+   
   );
 };
 
