@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import SearchIcon from "@mui/icons-material/Search";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
@@ -65,11 +65,13 @@ const Navbar = () => {
                 <p>kids</p>
               </div>
             </li>
+
             {checkUserLogin() && (
               <li>
                 <a onClick={() => navigate("/product-create")}>Ｃｒｅａｔｅ</a>
               </li>
             )}
+
           </ul>
         </div>
         <div className="right-navbar">
@@ -92,8 +94,11 @@ const Navbar = () => {
           ) : (
             <PermIdentityIcon onClick={() => navigate("/register")} />
           )}
-
-          <FavoriteBorderIcon />
+          {checkUserLogin() ? (
+            <BookmarkBorderIcon onClick={() => navigate("/favorites")} />
+          ) : (
+            <PermIdentityIcon onClick={() => navigate("/register")} />
+          )}
         </div>
       </nav>
     </>
