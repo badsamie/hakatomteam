@@ -17,6 +17,9 @@
   transition: background-color 0.3s;
   font-family: "Space Grotesk", sans-serif;
 }
+.logo {
+  font-size: 100%;
+}
 
 .navbar.scrolled {
   background-color: #f8f9fc;
