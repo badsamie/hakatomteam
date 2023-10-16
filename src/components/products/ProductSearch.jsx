@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../store/products/productsActions";
 import { setSearchVal } from "../../store/products/productSlice";
-
 const ProductSearch = () => {
   const { search } = useSelector((state) => state.products);
   const [searchValue, setSearchValue] = useState("");
@@ -45,8 +44,9 @@ const ProductSearch = () => {
         value={searchValue}
         id="Search"
         placeholder="Search"
-        className=" text-black font-serif border lowercase text-md text-center  "
+        className=" text-black font-serif border lowercase text-md text-center  w-40 "
       />
+
       <span
         className="absolute inset-y-0 end-0 grid w-10 place-content-center"
         onClick={() => {
