@@ -40,11 +40,13 @@ const ProductSearch = () => {
       </label>
       <input
         type="text"
+
         onChange={(e) => handleInputChange(e.target.value)}
         value={searchValue}
         id="Search"
         placeholder="Search"
         className=" text-black font-serif border lowercase text-md text-center  "
+
       />
       <span
         className="absolute inset-y-0 end-0 grid w-10 place-content-center"

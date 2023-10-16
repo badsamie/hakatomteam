@@ -5,9 +5,11 @@ const Footer = () => {
     <footer className="bg-black ">
       <div className="container px-6 py-12 mx-auto">
         <div className="text-center">
+
           <h1 className="text-4xl font-serif uppercase tracking-widest text-gray-800 dark:text-white " >
             Ralph Lauren
           </h1>
+
 
           <div className="flex flex-col mt-6 sm:flex-row sm:items-center sm:justify-center">
             <button className="w-full px-5 py-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-900 rounded-md sm:mx-2 sm:order-2 sm:w-auto hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
@@ -301,18 +303,13 @@ const Footer = () => {
               </a>
             </li>
           </ul>
-          {/* Аналогично для "Company", "Resources", "Use cases" и "Legal" */}
         </div>
 
         <hr className="my-6 border-gray-200 md:my-10 dark:border-gray-700" />
 
         <div className="flex flex-col items-center justify-between sm:flex-row">
           <a href="#">
-            <img
-              className="w-auto h-12"
-              src="https://e1.pxfuel.com/desktop-wallpaper/407/119/desktop-wallpaper-polo-ralph-lauren-logo-vector-ralph-lauren.jpg"
-              alt=""
-            />
+            <p className="text-white">ＲＡＬＰＨ ＬＡＵＲＥＮ</p>
           </a>
           <p className="mt-4 text-sm text-gray-500 sm:mt-0 dark:text-gray-300">
             © ASEL 2023. All Rights Reserved.

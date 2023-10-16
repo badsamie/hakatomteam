@@ -7,7 +7,7 @@ const productSlice = createSlice({
     products: [],
     oneProduct: null,
     currentPage: 1,
-    totalPages: 3,
+    totalPages: 1,
     currentCategory: "",
     search: "",
     categories: [],
@@ -64,7 +64,8 @@ const productSlice = createSlice({
     builder
       .addCase(getProducts.fulfilled, (state, action) => {
         state.loading = false;
-        state.products = action.payload;
+        state.products = action.payload.data;
+        state.totalPages = action.payload.totalPages;
       })
       .addCase(getProducts.pending, (state) => {
         state.loading = true;

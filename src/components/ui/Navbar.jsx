@@ -32,16 +32,14 @@ const Navbar = () => {
     <>
       <nav className={scrolled ? "navbar scrolled" : "navbar"}>
         <div className="logo">
-          <img
-            src="https://logohistory.net/wp-content/uploads/2023/07/Ralph-Lauren-Logo.png"
-            alt="Ralph Lauren Logo"
-          />
+          <a>ＲＡＬＰＨ ＬＡＵＲＥＮ</a>
         </div>
         <div className="left-navbar">
           <ul className="nav-links text-light">
             <li>
-              <a onClick={() => navigate("/")}>Home</a>
+              <a onClick={() => navigate("/")}>Ｈｏｍｅ</a>
             </li>
+
             <li className="group relative">
               <a onClick={() => navigate("/products")}>Products</a>
               <div className="absolute left-0 mt-2 w-48 bg-white text-black p-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition ease-in-out duration-200  ">
@@ -60,6 +58,7 @@ const Navbar = () => {
             </li>
             <li>
               <a onClick={() => navigate("/product-create")}>create</a>
+
             </li>
           </ul>
         </div>
