@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 // import ProductList from "../components/products/ProductList";
 import FilterProducts from "./FilterProducts";
 import LoadingIndicator from "./sabina/LoadingIndicator";
-import Slider from "react-slick";
+import Slider from "./sabina/Slider";
 
 const LazyProductList = React.lazy(() =>
   import("../components/products/ProductList")

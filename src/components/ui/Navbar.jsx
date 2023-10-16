@@ -63,7 +63,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="right-navbar">
-          <SearchIcon onClick={() => navigate("")} />
+          <SearchIcon onClick={() => navigate("/products")} />
           {checkUserLogin() ? (
             <PersonOffIcon
               onClick={() => {

@@ -12,6 +12,7 @@ import PayPage from "../pages/PayPage";
 import ProductDetailsPage from "../pages/ProductDetailsPage";
 import ProductEditPage from "../pages/ProductEditPage";
 import CartPage from "../pages/CartPage";
+import { Slider } from "@mui/material";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -61,6 +62,11 @@ const MainRoutes = () => {
       path: "/cart",
       element: <CartPage />,
     },
+    {
+        id:10,
+        path: "/slider",
+        element: <Slider />
+    }
   ];
 
   return (
