@@ -21,7 +21,11 @@ const Carousel = ({ images = [] }) => {
           <Slider {...settings}>
             {images.map((image, index) => (
               <div key={index}>
-                <img src={image} alt={`carousel-img-${index}`} />
+                <img
+                  src={image}
+                  alt={`carousel-img-${index}`}
+                  className="w-full h-auto max-h-96 md:max-h-[500px] lg:max-h-[600px]"
+                />
               </div>
             ))}
           </Slider>

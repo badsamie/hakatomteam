@@ -4,26 +4,16 @@ import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import SearchIcon from "@mui/icons-material/Search";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
-import "./Navbar.css";
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import PersonOffIcon from "@mui/icons-material/PersonOff";
 import { logout, checkUserLogin } from "../../helpers/functions";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
-  // !-----------------------------------voice
-  const [recognizedText, setRecognizedText] = useState("");
-  const handleVoiceRecognition = () => {
-    const recognition = new (window.SpeechRecognition ||
-      window.webkitSpeechRecognition)();
-    recognition.lang = "en-US";
-    recognition.onresult = (event) => {
-      const transcript = event.results[0][0].transcript;
-      setRecognizedText(transcript);
-    };
-    recognition.start();
-  };
-  // !-----------------------------------vouce
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const handleScroll = () => {
     if (window.scrollY > 20) {
       setScrolled(true);
@@ -34,7 +24,6 @@ const Navbar = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -43,60 +32,67 @@ const Navbar = () => {
   return (
     <>
       <nav className={scrolled ? "navbar scrolled" : "navbar"}>
-        <div className="logo">
-          <a>ＲＡＬＰＨ ＬＡＵＲＥＮ</a>
+        <div className="md:hidden flex justify-between items-center w-full px-4 bg-transparent">
+          <a className="logo">ＲＡＬＰＨ ＬＡＵＲＥＮ</a>
+          {menuOpen ? <CloseIcon onClick={() => setMenuOpen(false)} /> : <MenuIcon onClick={() => setMenuOpen(true)} />}
         </div>
-        <div className="left-navbar">
-          <ul className="nav-links text-light">
-            <li>
-              <a onClick={() => navigate("/")} className="text-light">
-                Ｈｏｍｅ
-              </a>
-            </li>
 
-            <li className="group relative">
-              <a onClick={() => navigate("/products")}>Ｐｒｏｄｕｃｔｓ</a>
-              <div className="absolute left-0 mt-2 w-48 bg-white text-black p-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition ease-in-out duration-200  ">
-                <p className="text-light lowercase">men</p>
-                <hr />
-                <p className="text-light lowercase ">women</p>
-                <hr />
-                <p>kids</p>
-              </div>
-            </li>
+        <div className="hidden md:flex justify-between w-full px-4">
+          <a className="logo">ＲＡＬＰＨ ＬＡＵＲＥＮ</a>
 
-            {checkUserLogin() && (
-              <li>
-                <a onClick={() => navigate("/product-create")}>Ｃｒｅａｔｅ</a>
-              </li>
+          <div className="flex space-x-4">
+            <a onClick={() => navigate("/")}>Ｈｏｍｅ</a>
+            <a onClick={() => navigate("/products")}>Ｐｒｏｄｕｃｔｓ</a>
+            {checkUserLogin() && <a onClick={() => navigate("/product-create")}>Ｃｒｅａｔｅ</a>}
+          </div>
+
+          <div className="flex space-x-4">
+            <SearchIcon />
+            {checkUserLogin() ? (
+              <>
+                <PersonOffIcon onClick={() => {
+                    logout();
+                    navigate("/");
+                  }}
+                />
+                <ShoppingBagIcon onClick={() => navigate("/cart")} />
+                <BookmarkBorderIcon onClick={() => navigate("/favorites")} />
+              </>
+            ) : (
+              <>
+                <PermIdentityIcon onClick={() => navigate("/register")} />
+                <ShoppingBagIcon onClick={() => navigate("/register")} />
+                <BookmarkBorderIcon onClick={() => navigate("/register")} />
+              </>
             )}
-          </ul>
+          </div>
         </div>
-        <div className="right-navbar">
-          <p>Recognized Text: {recognizedText}</p>
-          <SearchIcon onClick={handleVoiceRecognition} />
 
-          {checkUserLogin() ? (
-            <PersonOffIcon
-              onClick={() => {
-                logout();
-                navigate("/");
-              }}
-            />
-          ) : (
-            <PermIdentityIcon onClick={() => navigate("/register")} />
-          )}
-          {checkUserLogin() ? (
-            <ShoppingBagIcon onClick={() => navigate("/cart")} />
-          ) : (
-            <ShoppingBagIcon onClick={() => navigate("/register")} />
-          )}
-          {checkUserLogin() ? (
-            <BookmarkBorderIcon onClick={() => navigate("/favorites")} />
-          ) : (
-            <BookmarkBorderIcon onClick={() => navigate("/register")} />
-          )}
-        </div>
+        {menuOpen && (
+          <div className="md:hidden">
+            <a onClick={() => navigate("/")}>Ｈｏｍｅ</a>
+            <a onClick={() => navigate("/products")}>Ｐｒｏｄｕｃｔｓ</a>
+            {checkUserLogin() && <a onClick={() => navigate("/product-create")}>Ｃｒｅａｔｅ</a>}
+            <SearchIcon />
+            {checkUserLogin() ? (
+              <>
+                <PersonOffIcon onClick={() => {
+                    logout();
+                    navigate("/");
+                  }}
+                />
+                <ShoppingBagIcon onClick={() => navigate("/cart")} />
+                <BookmarkBorderIcon onClick={() => navigate("/favorites")} />
+              </>
+            ) : (
+              <>
+                <PermIdentityIcon onClick={() => navigate("/register")} />
+                <ShoppingBagIcon onClick={() => navigate("/register")} />
+                <BookmarkBorderIcon onClick={() => navigate("/register")} />
+              </>
+            )}
+          </div>
+        )}
       </nav>
     </>
   );

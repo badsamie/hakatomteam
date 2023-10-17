@@ -25,7 +25,7 @@ const Slider = () => {
   }, []);
 
   return (
-    <div className="relative w-full  h-[400px] overflow-hidden ">
+    <div className="relative w-full  h-[500px] overflow-hidden ">
       {images.map((image, index) => (
         <img
           key={index}
@@ -39,16 +39,16 @@ const Slider = () => {
 
       <button
         onClick={prevSlide}
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10"
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white w-9 "
       >
-        prev
+        ←
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 "
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white w-9"
       >
-        next
+        →
       </button>
 
       <div className="absolute bottom-4 left-4 flex space-x-2">
@@ -56,7 +56,7 @@ const Slider = () => {
           <div
             key={index}
             className={`w-4 h-1 ${
-              index === activeIndex ? "bg-blue-600" : "bg-gray-400"
+              index === activeIndex ? "bg-gray-600" : "bg-gray-400 "
             }`}
           ></div>
         ))}

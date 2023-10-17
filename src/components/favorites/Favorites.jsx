@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getFavorites } from "../../store/favorites/FavoritesSlice";
 import { useNavigate } from "react-router-dom";
 import { deleteProductFromFavorites } from "../../store/favorites/FavoritesAction";
+import { BookmarkBorder, BookmarkOutlined } from "@mui/icons-material";
 
 const Favorites = () => {
   const { favorites } = useSelector((state) => state.favorites);
@@ -18,10 +19,10 @@ const Favorites = () => {
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-col text-center w-full mb-20">
-            <h1 className="text-2xl font-medium title-font mb-4 text-gray-900">
-              Your Cart
+            <h1 className="text-2xl font-light title-font mb-4 uppercase  text-gray-900">
+              Favorites
             </h1>
-            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+            <p className="lg:w-2/3 mx-auto leading-relaxed text-sm uppercase font-light">
               Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
               gentrify, subway tile poke farm-to-table.
             </p>
@@ -36,7 +37,7 @@ const Favorites = () => {
                   <div className="h-full flex flex-col items-center text-center">
                     <img
                       alt="product"
-                      className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4"
+                      className="flex-shrink-0 w-full h-80 object-cover object-center mb-4"
                       src={product.productItem.picture}
                     />
                     <div className="w-full">
@@ -46,6 +47,7 @@ const Favorites = () => {
                       <h3 className="text-gray-500 mb-3">
                         Price: ${product.productItem.price}
                       </h3>
+
                       <div className="inline-flex">
                         <button
                           onClick={() => {
@@ -55,7 +57,7 @@ const Favorites = () => {
                           }}
                           className="cart-item-remove"
                         >
-                          Remove
+                          remove
                         </button>
                       </div>
                     </div>
@@ -65,13 +67,16 @@ const Favorites = () => {
             </div>
           ) : (
             <div className="cart-empty">
-              <h3 className="cart-empty-title">Cart is empty!</h3>
+              <h3 className="cart-empty-title uppercase font-light">
+                {" "}
+                You have no favorites!
+              </h3>
               <p className="cart-empty-message">
-                You should add products to the cart
+                You can add products you like to Favorites
               </p>
               <button
                 onClick={() => navigate("/products")}
-                className="cart-empty-button"
+                className="cart-empty-button font-light uppercase"
               >
                 Go To Products
               </button>

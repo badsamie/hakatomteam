@@ -3,9 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { checkUserLogin, getAuthUser } from "../../helpers/functions";
 import ProductLike from "./ProductLike";
 import Favorites from "../favorites/Favorites";
+import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
+import { getFavorites } from "../../store/favorites/FavoritesSlice";
+import ProductFavorites from "../favorites/ProductFavorites";
 
 const ProductItem = ({ product }) => {
   const [isLikedProduct, setIsLikedProduct] = useState(false);
+
   const navigate = useNavigate();
 
   const checkProductLike = () => {
@@ -24,7 +28,7 @@ const ProductItem = ({ product }) => {
   }, []);
 
   return (
-    <div className="w-1/3 flex flex-col mb-9 px-0.5">
+    <div className="w-full md:w-1/2 lg:w-1/3 flex flex-col mb-9 px-0.5">
       <div
         onClick={() => navigate(`/products/${product.id}`)}
         className="w-full h-auto overflow-hidden relative cursor-pointer"
@@ -36,14 +40,14 @@ const ProductItem = ({ product }) => {
         />
       </div>
 
-      <div className="flex justify-between items-start mt-5  w-full ">
+      <div className="flex justify-between items-start mt-5 w-full">
         <div>
           <p className="font-serif text-lg">{product.name}</p>
           <p className="font-light text-sm">{product.description}</p>
           <p className="font-light text-base mt-2">KGS {product.price}</p>
         </div>
 
-        <div className="ml-5 mr-2 flex items-center flex-col ">
+        <div className="ml-5 mr-2 flex items-center flex-col">
           {checkUserLogin() ? (
             <ProductLike
               isLikedProduct={isLikedProduct}
