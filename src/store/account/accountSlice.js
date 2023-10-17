@@ -38,12 +38,12 @@ const accountSlice = createSlice({
         state.user = action.payload.user;
         addDataToLocalStorage(action.payload.user, action.payload.data);
         updateToken();
-        action.payload.navigate('/');
+        action.payload.navigate("/");
       })
       .addCase(loginAccount.rejected, (state) => {
         state.loading = false;
-        state.status = 'error';
-      })
+        state.status = "error";
+      });
   },
 });
 

@@ -6,7 +6,7 @@ import {
   getOneProduct,
 } from "../../store/products/productsActions";
 import { clearOneProductState } from "../../store/products/productSlice";
-import { checkUserLogin } from "../../helpers/functions";
+import { checkAdminLogin, checkUserLogin } from "../../helpers/functions";
 import {
   toggleProductToCart,
   checkProductInCart,
@@ -91,23 +91,28 @@ const ProductDetails = () => {
                 <p className="text-lg font-light underline ">
                   KGS {oneProduct.price}
                 </p>
-                <button
-                  className="w-full md:w-auto bg-transparent border border-black py-2 text-black uppercase font-light hover:bg-black hover:text-white transition duration-300"
-                  onClick={() => {
-                    navigate(`/product-edit/${oneProduct.id}`);
-                  }}
-                >
-                  Edit
-                </button>
-                <button
-                  className="w-full md:w-auto bg-transparent border mt-4 border-black py-2 text-black uppercase font-light hover:bg-black hover:text-white transition duration-300"
-                  onClick={() => {
-                    dispatch(deleteProduct({ id: oneProduct.id }));
-                    navigate("/products");
-                  }}
-                >
-                  Delete
-                </button>
+                {checkAdminLogin() && (
+                  <button
+                    className="w-full md:w-auto bg-transparent border border-black py-2 text-black uppercase font-light hover:bg-black hover:text-white transition duration-300"
+                    onClick={() => {
+                      navigate(`/product-edit/${oneProduct.id}`);
+                    }}
+                  >
+                    Edit
+                  </button>
+                )}
+                {checkAdminLogin() && (
+                  <button
+                    className="w-full md:w-auto bg-transparent border mt-4 border-black py-2 text-black uppercase font-light hover:bg-black hover:text-white transition duration-300"
+                    onClick={() => {
+                      dispatch(deleteProduct({ id: oneProduct.id }));
+                      navigate("/products");
+                    }}
+                  >
+                    Delete
+                  </button>
+                )}
+
                 <div className="flex space-x-4 mt-4">
                   <button
                     onClick={() => {
