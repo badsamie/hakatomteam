@@ -199,7 +199,7 @@ function PayPage() {
                 : "bg-blue-50 text-gray-500"
             } focus:ring focus:outline-none w-full text-xl font-semibold transition-colors`}
             disabled={!isValid()}
-            onClick={onSubmit}
+            onClick={() => navigate("/")}
           >
             Pay now
           </button>
