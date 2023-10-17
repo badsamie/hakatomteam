@@ -70,9 +70,15 @@
           "body": "ssssss",
           "rating": 5,
           "user": "sam151515"
+        },
+        {
+          "id": 1697472507482,
+          "body": "woooooowww",
+          "rating": 10,
+          "user": "sabina"
         }
       ],
-      "rating": "5.0"
+      "rating": "7.5"
     },
     {
       "name": "Cable Wool-Cashmere Short-Sleeve Jumper",
@@ -105,7 +111,7 @@
           "user": "sama122"
         },
         {
-          "id": 1697431992174,
+          "id": 1697485058555,
           "user": "sabina"
         },
         {
@@ -127,7 +133,7 @@
           "user": "sama122"
         },
         {
-          "id": 1697428476764,
+          "id": 1697485057088,
           "user": "sabina"
         },
         {
@@ -155,24 +161,6 @@
         {
           "id": 1697483381616,
           "user": "sam151515"
-        }
-      ]
-    },
-    {
-      "name": "Wide-Leg Crop Jean",
-      "picture": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1446176_alternate10?$rl_df_pdp_5_7_a10$",
-      "price": 5555,
-      "description": "Polo Ralph Lauren",
-      "type": "jeans",
-      "id": 7,
-      "likes": [
-        {
-          "id": 1697306736732,
-          "user": "sama122"
-        },
-        {
-          "id": 1697366743505,
-          "user": "sabina"
         }
       ]
     },
@@ -594,8 +582,9 @@
       "id": 4
     },
     {
-      "user": "sam151515",
-      "totalCost": 74,
+      "user": "sabina",
+      "totalCost": 182.26,
+
       "products": [
         {
           "count": 1,
@@ -631,6 +620,76 @@
                 "body": "ssssss",
                 "rating": 5,
                 "user": "sam151515"
+              },
+              {
+                "id": 1697472507482,
+                "body": "woooooowww",
+                "rating": 10,
+                "user": "sabina"
+              }
+            ],
+            "rating": "7.5"
+          }
+        },
+        {
+          "count": 1,
+          "totalPrice": 23.26,
+          "productItem": {
+            "name": "Textured Cotton Crewneck Jumper",
+            "picture": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1487574_alternate10?$plpDeskRFAlt$",
+            "price": 23.26,
+            "description": "Polo Ralph Lauren",
+            "type": "jumper",
+            "id": 1,
+            "likes": [
+              {
+                "id": 1697292525774,
+                "user": "asd"
+              },
+              {
+                "id": 1697372905737,
+                "user": "sama122"
+              },
+              {
+                "id": 1697428472980,
+                "user": "sabina"
+              },
+              {
+                "id": 1697444126509,
+                "user": "123"
+              },
+              {
+                "id": 1697465209997,
+                "user": "sam151515"
+              }
+            ],
+            "comments": [
+              {
+                "id": 1697296417364,
+                "body": "ыыыы",
+                "rating": 3,
+                "user": "sama122"
+              }
+            ],
+            "rating": "3.0"
+          }
+        },
+        {
+          "count": 1,
+          "totalPrice": 85,
+          "productItem": {
+            "name": "Cable Wool-Cashmere Short-Sleeve Jumper",
+            "picture": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1485539_alternate10?$plpDeskRFAlt$",
+            "price": 85,
+            "description": "Polo Ralph Lauren",
+            "type": "jumper",
+            "id": 3,
+            "likes": [
+              {
+                "id": 1697296813595,
+                "user": "sama122"
+              }
+            ]
               }
             ],
             "rating": "5.0"

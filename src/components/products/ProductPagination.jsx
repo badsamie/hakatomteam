@@ -15,7 +15,11 @@ const ProductPagination = () => {
   return (
     <Stack
       className="pagination"
-      sx={{ margin: "20px", borderRadius: "20px" }}
+      sx={{
+        margin: "20px",
+        width: { xs: "100%", md: "25%" },
+        justifyContent: { xs: "center", md: "flex-start" }
+      }}
       spacing={2}
     >
       <Pagination

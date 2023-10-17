@@ -22,6 +22,14 @@ import {
 } from "../../store/favorites/FavoritesAction";
 import { getFavorites } from "../../store/favorites/FavoritesSlice";
 import LoadingIndicator from "../../pages/sabina/LoadingIndicator";
+import {
+  BookmarkAddOutlined,
+  BookmarkAddSharp,
+  BookmarkAddedSharp,
+  ShopOutlined,
+  ShoppingBagOutlined,
+} from "@mui/icons-material";
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 
 const ProductDetails = () => {
   const { loading, oneProduct } = useSelector((state) => state.products);
@@ -60,23 +68,22 @@ const ProductDetails = () => {
       {loading ? (
         <LoadingIndicator />
       ) : (
-        <div className="flex mt-48">
+        <div className="flex flex-col md:flex-row mt-48">
           {oneProduct && (
             <>
               <div className="flex-2 pr-6 -mt-24">
                 <img
                   src={oneProduct.picture}
                   alt={oneProduct.name}
-                  className="w-full h-auto"
+                  className="object-cover"
                 />
               </div>
-
               <div className="flex-1 flex flex-col space-y-4">
-                <h3 className="text-3xl font-light uppercase">
+                <h3 className="text-xl md:text-2xl lg:text-3xl font-light uppercase">
                   {oneProduct.name}
                 </h3>
                 {oneProduct.rating && (
-                  <h3 className="uppercase">Raiting: {oneProduct.rating}</h3>
+                  <h3 className="uppercase">Rating: {oneProduct.rating}</h3>
                 )}
                 <p className="text-gray-600 uppercase">
                   {oneProduct.description}
@@ -84,18 +91,16 @@ const ProductDetails = () => {
                 <p className="text-lg font-light underline ">
                   KGS {oneProduct.price}
                 </p>
-
                 <button
-                  className="bg-transparent border е border-black w-full py-2 text-black uppercase font-light hover:bg-black hover:text-white transition duration-300"
+                  className="w-full md:w-auto bg-transparent border border-black py-2 text-black uppercase font-light hover:bg-black hover:text-white transition duration-300"
                   onClick={() => {
                     navigate(`/product-edit/${oneProduct.id}`);
                   }}
                 >
                   Edit
                 </button>
-
                 <button
-                  className="bg-transparent border border-black w-full py-2 text-black uppercase font-light hover:bg-black hover:text-white transition duration-300 mt-4"
+                  className="w-full md:w-auto bg-transparent border mt-4 border-black py-2 text-black uppercase font-light hover:bg-black hover:text-white transition duration-300"
                   onClick={() => {
                     dispatch(deleteProduct({ id: oneProduct.id }));
                     navigate("/products");
@@ -103,28 +108,32 @@ const ProductDetails = () => {
                 >
                   Delete
                 </button>
-
-                <button
-                  className="bg-transparent border border-black w-full py-2 text-black uppercase font-light hover:bg-black hover:text-white transition duration-300 mt-4"
-                  onClick={() => {
-                    toggleProductToCart(oneProduct);
-                    dispatch(getCart());
-                  }}
-                >
-                  {isProductInCart ? "Remove From Cart" : "Add To Cart"}
-                </button>
-                <button
-                  className="bg-transparent border border-black w-full py-2 text-black uppercase font-light hover:bg-black hover:text-white transition duration-300 mt-4"
-                  onClick={() => {
-                    toggleProductToFavorites(oneProduct);
-                    dispatch(getFavorites());
-                  }}
-                >
-                  {isProductInFavorites
-                    ? "Remove From Favorites"
-                    : "Add To Favorites"}
-                </button>
-
+                <div className="flex space-x-4 mt-4">
+                  <button
+                    onClick={() => {
+                      toggleProductToCart(oneProduct);
+                      dispatch(getCart());
+                    }}
+                  >
+                    {isProductInCart ? (
+                      <ShoppingBagIcon className="md:w-6 md:h-6 w-8 h-8" />
+                    ) : (
+                      <ShoppingBagOutlined className="md:w-6 md:h-6 w-8 h-8" />
+                    )}
+                  </button>
+                  <button
+                    onClick={() => {
+                      toggleProductToFavorites(oneProduct);
+                      dispatch(getFavorites());
+                    }}
+                  >
+                    {isProductInFavorites ? (
+                      <BookmarkAddedSharp className="md:w-6 md:h-6 w-8 h-8" />
+                    ) : (
+                      <BookmarkAddOutlined className="md:w-6 md:h-6 w-8 h-8" />
+                    )}
+                  </button>
+                </div>
                 {checkUserLogin() && <CommentCreate product={oneProduct} />}
                 {oneProduct.comments ? (
                   <div className="border mt-6 p-4 rounded">
