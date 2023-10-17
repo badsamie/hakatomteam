@@ -1,11 +1,12 @@
 import React, { useState, useRef } from "react";
-import AarneAudio from "./Aarne.mp3";
+import toto from "./toto.mp3";
+import { MusicNoteOutlined, MusicOffOutlined } from "@mui/icons-material";
 
 const Sound = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
 
-  const audioUrl = AarneAudio; // Путь к аудиофайлу
+  const audioUrl = toto;
 
   const playPauseHandler = () => {
     if (isPlaying) {
@@ -19,9 +20,9 @@ const Sound = () => {
   return (
     <div className="mt-10">
       <audio src={audioUrl} ref={audioRef}></audio>
-      <div className="controls">
+      <div className="control text-black uppercase font-light -mt-10 ">
         <button onClick={playPauseHandler}>
-          {isPlaying ? "Pause" : "Play"}
+          {isPlaying ? <MusicNoteOutlined/> : <MusicOffOutlined/>}
         </button>
       </div>
     </div>

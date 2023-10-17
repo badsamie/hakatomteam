@@ -16,6 +16,7 @@ import MicIcon from "@mui/icons-material/Mic";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchVal } from "../../store/products/productSlice";
 import { getProducts } from "../../store/products/productsActions";
+import Sound from "../games/Sound";
 const Navbar = () => {
   const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
@@ -120,6 +121,7 @@ const Navbar = () => {
                 navigate("/products");
               }}
             />
+             <Sound  />
             {checkUserLogin() ? (
               <>
                 <PersonOffIcon
