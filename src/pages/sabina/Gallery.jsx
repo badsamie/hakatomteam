@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-import InfiniteScroll from "react-infinite-scroll-component";
-import LoadingIndicator from "./LoadingIndicator";
+import React from "react";
 
 const Gallery = () => {
   const images = [

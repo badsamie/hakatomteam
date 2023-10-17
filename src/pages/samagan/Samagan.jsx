@@ -10,7 +10,7 @@ const Samagan = () => {
       <SlideShow />
       <CarouselPage />
       <Gallery />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
