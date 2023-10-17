@@ -31,6 +31,10 @@
         {
           "id": 1697530854904,
           "user": "sam8585"
+        },
+        {
+          "id": 1697541131968,
+          "user": "karina"
         }
       ],
       "comments": [
@@ -76,6 +80,10 @@
         {
           "id": 1697530856480,
           "user": "sam8585"
+        },
+        {
+          "id": 1697541134103,
+          "user": "karina"
         }
       ],
       "comments": [
@@ -105,8 +113,21 @@
         {
           "id": 1697296813595,
           "user": "sama122"
+        },
+        {
+          "id": 1697541135753,
+          "user": "karina"
         }
-      ]
+      ],
+      "comments": [
+        {
+          "id": 1697541200986,
+          "body": "cool buy ",
+          "rating": 10,
+          "user": "karina"
+        }
+      ],
+      "rating": "10.0"
     },
     {
       "name": "Fair Isle Wool-Blend V-Neck Cardigan",

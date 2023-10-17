@@ -25,16 +25,3 @@ export const loginAccount = createAsyncThunk(
     return { data, navigate, user: user.username };
   }
 );
-
-// !admin
-export const loginAdmin = createAsyncThunk(
-  "account/loginAdmin",
-  async ({ admin, navigate }) => {
-    const adminData = new FormData();
-    adminData.append("name", admin.adminname);
-    adminData.append("password", admin.password);
-    const { data } = await axios.post(`${ACCOUNT_API}/api/token`, adminData);
-    return { data, navigate, admin: admin.adminname };
-  }
-);
-// !admin

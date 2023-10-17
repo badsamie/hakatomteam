@@ -77,40 +77,34 @@ const Navbar = () => {
             <MenuIcon onClick={() => setMenuOpen(true)} />
           )}
         </div>
-
-        {/* <li className="group relative">
-          <a onClick={() => navigate("/products")}>Ｐｒｏｄｕｃｔｓ</a>
-          <div className="absolute left-0 mt-2 w-48 bg-white text-black p-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition ease-in-out duration-200  ">
-            <p
-              onClick={() => navigate("jean")}
-              className="text-light lowercase"
-            >
-              men
-            </p>
-            <hr />
-            <p className="text-light lowercase ">women</p>
-            <hr />
-            <p>kids</p>
-          </div>
-        </li> */}
         <div className="hidden md:flex justify-between w-full px-4 h-8">
           <a className="logo">ＲＡＬＰＨ ＬＡＵＲＥＮ</a>
 
-          <div className="flex space-x-4">
-            <a onClick={() => navigate("/")}>Ｈｏｍｅ</a>
-            <a onClick={() => navigate("/products")}>Ｐｒｏｄｕｃｔｓ</a>
+          <div className="flex space-x-4 ">
+            <a className="cursor-pointer" onClick={() => navigate("/")}>
+              Ｈｏｍｅ
+            </a>
+            <a className="cursor-pointer" onClick={() => navigate("/products")}>
+              Ｐｒｏｄｕｃｔｓ
+            </a>
             {checkAdminLogin() && (
-              <a onClick={() => navigate("/product-create")}>Ｃｒｅａｔｅ</a>
+              <a
+                className="cursor-pointer"
+                onClick={() => navigate("/product-create")}
+              >
+                Ｃｒｅａｔｅ
+              </a>
             )}
           </div>
 
           <div className="flex space-x-4">
             <input
-              className=" w-4"
+              className="w-20"
               type="text"
               onChange={handleInputChange}
               value={searchValue}
             />
+
             <MicIcon onClick={handleVoiceRecognition} />
 
             <SearchIcon

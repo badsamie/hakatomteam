@@ -10,9 +10,7 @@ import ProductDetailsPage from "../pages/ProductDetailsPage";
 import ProductEditPage from "../pages/ProductEditPage";
 import CartPage from "../pages/CartPage";
 import Favorites from "../components/favorites/Favorites";
-
 import Slider from "../pages/sabina/Slider";
-import Speach from "../components/games/Speach";
 import Sound from "../components/games/Sound";
 
 const MainRoutes = () => {
@@ -72,12 +70,6 @@ const MainRoutes = () => {
       id: 11,
       path: "/favorites",
       element: <Favorites />,
-    },
-
-    {
-      id: 12,
-      path: "/speach",
-      element: <Speach />,
     },
     {
       id: 13,
