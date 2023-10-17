@@ -12,7 +12,7 @@ const Favorites = () => {
 
   useEffect(() => {
     dispatch(getFavorites());
-  }, [dispatch]);
+  }, []);
 
   return (
     <>
@@ -21,6 +21,7 @@ const Favorites = () => {
           <div className="flex flex-col text-center w-full mb-20">
             <h1 className="text-2xl font-light title-font mb-4 uppercase  text-gray-900">
               Favorites
+
             </h1>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-sm uppercase font-light">
               Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
@@ -51,9 +52,8 @@ const Favorites = () => {
                       <div className="inline-flex">
                         <button
                           onClick={() => {
-                            dispatch(
-                              deleteProductFromFavorites(product.productItem.id)
-                            );
+                            deleteProductFromFavorites(product.productItem.id);
+                            dispatch(getFavorites());
                           }}
                           className="cart-item-remove"
                         >

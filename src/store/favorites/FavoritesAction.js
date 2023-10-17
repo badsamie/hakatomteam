@@ -1,6 +1,3 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-import { FAVORITES_API } from "../../helpers/consts";
 export const getFavoritesData = () => {
   const favorites = JSON.parse(localStorage.getItem("favorites"));
   if (!favorites) {
@@ -46,8 +43,3 @@ export const toggleProductToFavorites = (productObj) => {
   }
   setFavoritesData(favorites);
 };
-export const createFav = createAsyncThunk("favorites/createFav", async () => {
-  const favorites = getFavoritesData();
-  if (!favorites.products.length) return;
-  await axios.get(FAVORITES_API, favorites);
-});

@@ -568,6 +568,7 @@
     {
       "user": "sabina",
       "totalCost": 182.26,
+
       "products": [
         {
           "count": 1,
@@ -673,6 +674,9 @@
                 "user": "sama122"
               }
             ]
+              }
+            ],
+            "rating": "5.0"
           }
         }
       ],

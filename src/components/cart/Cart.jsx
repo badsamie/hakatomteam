@@ -10,7 +10,6 @@ import {
 import { useNavigate } from "react-router-dom";
 import "./Cart.css";
 
-
 const Cart = () => {
   const { cart } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
@@ -18,7 +17,7 @@ const Cart = () => {
 
   useEffect(() => {
     dispatch(getCart());
-  }, [dispatch]);
+  }, []);
 
   return (
     <section className="text-gray-600 body-font">
@@ -52,7 +51,7 @@ const Cart = () => {
                     <h3 className="text-gray-500 mb-3 font-light uppercase">
                       Price: KGS {product.productItem.price}
                     </h3>
-                    <div >
+                    <div>
                       <input
                         type="number"
                         min="1"
@@ -84,7 +83,9 @@ const Cart = () => {
           </div>
         ) : (
           <div className="cart-empty">
-            <h3 className="cart-empty-title uppercase font-light">Cart is empty!</h3>
+            <h3 className="cart-empty-title uppercase font-light">
+              Cart is empty!
+            </h3>
             <p className="cart-empty-message">
               You should add products to the cart
             </p>
@@ -98,7 +99,9 @@ const Cart = () => {
         )}
         <div className="cart-summary">
           {cart && cart.totalCost ? (
-            <p className="cart-total uppercase font-light ">Total: KGS {cart.totalCost}</p>
+            <p className="cart-total uppercase font-light ">
+              Total: KGS {cart.totalCost}
+            </p>
           ) : null}
           <div className="cart-buttons">
             <button
