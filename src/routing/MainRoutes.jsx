@@ -13,6 +13,7 @@ import Favorites from "../components/favorites/Favorites";
 
 import Slider from "../pages/sabina/Slider";
 import Speach from "../components/games/Speach";
+import Sound from "../components/games/Sound";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -77,6 +78,11 @@ const MainRoutes = () => {
       id: 12,
       path: "/speach",
       element: <Speach />,
+    },
+    {
+      id: 13,
+      path: "/sound",
+      element: <Sound />,
     },
   ];
 

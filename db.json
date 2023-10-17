@@ -31,13 +31,13 @@
       ],
       "comments": [
         {
-          "id": 1697296417364,
-          "body": "ыыыы",
-          "rating": 3,
+          "id": 1697521108824,
+          "body": "хочу купить",
+          "rating": 5,
           "user": "sama122"
         }
       ],
-      "rating": "3.0"
+      "rating": "5.0"
     },
     {
       "name": "Fair Isle Sleeveless Jumper",
@@ -85,6 +85,10 @@
         {
           "id": 1697296813595,
           "user": "sama122"
+        },
+        {
+          "id": 1697483378959,
+          "user": "sam151515"
         }
       ]
     },
@@ -103,6 +107,10 @@
         {
           "id": 1697431992174,
           "user": "sabina"
+        },
+        {
+          "id": 1697483384607,
+          "user": "sam151515"
         }
       ]
     },
@@ -121,6 +129,10 @@
         {
           "id": 1697428476764,
           "user": "sabina"
+        },
+        {
+          "id": 1697483383008,
+          "user": "sam151515"
         }
       ]
     },
@@ -139,6 +151,10 @@
         {
           "id": 1697432008814,
           "user": "sabina"
+        },
+        {
+          "id": 1697483381616,
+          "user": "sam151515"
         }
       ]
     },
@@ -622,6 +638,98 @@
         }
       ],
       "id": 5
+    },
+    {
+      "user": "sama122",
+      "totalCost": 74,
+      "products": [
+        {
+          "count": 1,
+          "totalPrice": 74,
+          "productItem": {
+            "name": "Fair Isle Sleeveless Jumper",
+            "picture": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1485540_alternate10?$plpDeskRFAlt$",
+            "price": 74,
+            "description": "Polo Ralph Lauren",
+            "type": "jumper",
+            "id": 2,
+            "likes": [
+              {
+                "id": 1697372907992,
+                "user": "sama122"
+              },
+              {
+                "id": 1697428471149,
+                "user": "sabina"
+              },
+              {
+                "id": 1697459104335,
+                "user": "123"
+              },
+              {
+                "id": 1697465211906,
+                "user": "sam151515"
+              }
+            ],
+            "comments": [
+              {
+                "id": 1697464464997,
+                "body": "ssssss",
+                "rating": 5,
+                "user": "sam151515"
+              }
+            ],
+            "rating": "5.0"
+          }
+        }
+      ],
+      "id": 6
+    },
+    {
+      "user": "sama122",
+      "totalCost": 74,
+      "products": [
+        {
+          "count": 1,
+          "totalPrice": 74,
+          "productItem": {
+            "name": "Fair Isle Sleeveless Jumper",
+            "picture": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1485540_alternate10?$plpDeskRFAlt$",
+            "price": 74,
+            "description": "Polo Ralph Lauren",
+            "type": "jumper",
+            "id": 2,
+            "likes": [
+              {
+                "id": 1697372907992,
+                "user": "sama122"
+              },
+              {
+                "id": 1697428471149,
+                "user": "sabina"
+              },
+              {
+                "id": 1697459104335,
+                "user": "123"
+              },
+              {
+                "id": 1697465211906,
+                "user": "sam151515"
+              }
+            ],
+            "comments": [
+              {
+                "id": 1697464464997,
+                "body": "ssssss",
+                "rating": 5,
+                "user": "sam151515"
+              }
+            ],
+            "rating": "5.0"
+          }
+        }
+      ],
+      "id": 7
     }
   ],
   "favorites": [

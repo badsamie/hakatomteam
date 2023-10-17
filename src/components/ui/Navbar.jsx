@@ -11,10 +11,10 @@ import MicIcon from "@mui/icons-material/Mic";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchVal } from "../../store/products/productSlice";
 import { getProducts } from "../../store/products/productsActions";
-
 const Navbar = () => {
   const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
+
   // !--------------------------voice
   const { search } = useSelector((state) => state.products);
   const [searchValue, setSearchValue] = useState("");
@@ -66,7 +66,7 @@ const Navbar = () => {
     <>
       <nav className={scrolled ? "navbar scrolled" : "navbar"}>
         <div className="logo">
-          <a>ＲＡＬＰＨ ＬＡＵＲＥＮ</a>
+          <a onClick={() => navigate("sound")}>ＲＡＬＰＨ ＬＡＵＲＥＮ</a>
         </div>
         <div className="left-navbar">
           <ul className="nav-links text-light">
@@ -79,7 +79,12 @@ const Navbar = () => {
             <li className="group relative">
               <a onClick={() => navigate("/products")}>Ｐｒｏｄｕｃｔｓ</a>
               <div className="absolute left-0 mt-2 w-48 bg-white text-black p-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition ease-in-out duration-200  ">
-                <p className="text-light lowercase">men</p>
+                <p
+                  onClick={() => navigate("jean")}
+                  className="text-light lowercase"
+                >
+                  men
+                </p>
                 <hr />
                 <p className="text-light lowercase ">women</p>
                 <hr />
@@ -95,7 +100,12 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="right-navbar">
-          <input className="" type="text" onChange={handleInputChange} value={searchValue} />
+          <input
+            className=""
+            type="text"
+            onChange={handleInputChange}
+            value={searchValue}
+          />
           <MicIcon onClick={handleVoiceRecognition} />
           <SearchIcon
             onClick={() => {

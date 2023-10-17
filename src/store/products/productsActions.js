@@ -4,9 +4,8 @@ import { PRODUCTS_API } from "../../helpers/consts";
 import { getAuthUser, getTotalPages } from "../../helpers/functions";
 
 export const getProducts = createAsyncThunk(
-  'products/getProducts',
+  "products/getProducts",
   async (_, { getState }) => {
-
     const { currentPage, currentCategory, search, sortByRating, priceRange } =
       getState().products;
     const categoryAndSearchParams = `q=${search}${
@@ -88,4 +87,9 @@ export const toggleProductLike = createAsyncThunk(
   }
 );
 
-
+export const setCardigan = (searchValue) => {
+  return {
+    type: "SET_CARDIGAN",
+    payload: searchValue,
+  };
+};
