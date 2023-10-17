@@ -184,24 +184,6 @@
       ]
     },
     {
-      "name": "Wide-Leg Crop Jean",
-      "picture": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1446176_alternate10?$rl_df_pdp_5_7_a10$",
-      "price": 5555,
-      "description": "Polo Ralph Lauren",
-      "type": "jeans",
-      "id": 7,
-      "likes": [
-        {
-          "id": 1697306736732,
-          "user": "sama122"
-        },
-        {
-          "id": 1697366743505,
-          "user": "sabina"
-        }
-      ]
-    },
-    {
       "name": "Slim Fit Washable Wool Jumper",
       "picture": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1451634_alternate10?$plpDeskRFAlt$",
       "price": 741,
@@ -427,39 +409,12 @@
       "likes": []
     },
     {
-      "name": "Leather Medium Andie Drawstring Bag",
-      "picture": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1339586_lifestyle?$plpDeskRF$",
-      "price": 80,
-      "description": "Polo Ralph Lauren",
-      "type": "bags",
-      "id": 31,
-      "likes": []
-    },
-    {
-      "name": "Leather Medium Sophee Bag",
-      "picture": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1474714_lifestyle?$plpDeskRF$",
-      "price": 20,
-      "description": "Polo Ralph Lauren",
-      "type": "bags",
-      "id": 32,
-      "likes": []
-    },
-    {
       "name": "Polo ID Embossed Mini Shoulder Bag",
       "picture": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1485591_lifestyle?$rl_df_pdp_5_7_lif$",
       "price": 20,
       "description": "Polo Ralph Lauren",
       "type": "bags",
-      "id": 33,
-      "likes": []
-    },
-    {
-      "name": "Canvas Waist Pack",
-      "picture": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1411996_lifestyle?$plpDeskRF$",
-      "price": 20,
-      "description": "Polo Ralph Lauren",
-      "type": "bags",
-      "id": 34,
+      "id": 31,
       "likes": []
     },
     {
@@ -468,16 +423,7 @@
       "price": 20,
       "description": "Polo Ralph Lauren",
       "type": "bags",
-      "id": 35,
-      "likes": []
-    },
-    {
-      "name": "Leather Backpack",
-      "picture": "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1485563_lifestyle?$rl_df_pdp_5_7_lif$",
-      "price": 20,
-      "description": "Polo Ralph Lauren",
-      "type": "bags",
-      "id": 36,
+      "id": 32,
       "likes": []
     }
   ],
