@@ -20,6 +20,7 @@ export const checkProductInFavorites = (productId) => {
   );
 };
 
+
 export const deleteProductFromFavorites = (productId) => {
   const favorites = getFavoritesData();
   favorites.products = favorites.products.filter(

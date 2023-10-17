@@ -71,7 +71,7 @@ const Cart = () => {
                           deleteProductFromCart(product.productItem.id);
                           dispatch(getCart());
                         }}
-                        className="cart-item-remove border font-light"
+                        className="cart-item-remove border font-light "
                       >
                         Remove
                       </button>

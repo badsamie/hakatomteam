@@ -3,19 +3,20 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="bg-black ">
-      <div className="container px-6 py-12 mx-auto">
+      <div className="container px-4 py-6 mx-auto md:px-6 lg:px-8">
         <div className="text-center">
-          <h1 className="text-4xl font-serif uppercase tracking-widest dark:text-white  text-gray-400">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-400 font-serif uppercase tracking-widest dark:text-white">
             Ｍｏｒｅ ｔｏ Ｅｘｐｌｏｒｅ
           </h1>
 
-          <div className="flex flex-col mt-6 sm:flex-row sm:items-center sm:justify-center">
-            <button className="w-full px-5 py-2 text-sm font-light  tracking-wide text-white uppercase transition-colors duration-300 transform bg-gray-800  sm:mx-2 sm:order-2 sm:w-auto hover:bg-white hover:text-black  focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
+          <div className="flex flex-col mt-4 sm:mt-6 sm:flex-row sm:items-center sm:justify-center">
+            <button className="w-full px-4 py-2 text-sm sm:text-base md:px-5 md:py-3 font-light tracking-wide text-white uppercase transition-colors duration-300 transform bg-gray-800 sm:mx-2 sm:w-auto hover:bg-white hover:text-black focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
               Get started
             </button>
           </div>
         </div>
 
+       
         <div className="grid grid-cols-2 gap-6 mt-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
           <div>
             <h3 className="text-sm font-medium text-gray-500 dark:text-gray-400">
@@ -302,14 +303,15 @@ const Footer = () => {
             </li>
           </ul>
         </div>
+    
 
-        <hr className="my-6 border-gray-200 md:my-10 dark:border-gray-700" />
+        <hr className="my-6 border-gray-200 md:my-8 dark:border-gray-700" />
 
-        <div className="flex flex-col items-center justify-between sm:flex-row">
+        <div className="flex flex-col items-center mt-4 justify-between sm:mt-6 sm:flex-row">
           <a href="#">
-            <p className="text-white">ＲＡＬＰＨ ＬＡＵＲＥＮ</p>
+            <p className="text-white text-base sm:text-lg">ＲＡＬＰＨ ＬＡＵＲＥＮ</p>
           </a>
-          <p className="mt-4 text-sm text-gray-500 sm:mt-0 dark:text-gray-300">
+          <p className="mt-4 text-sm sm:text-base text-gray-500 sm:mt-0 dark:text-gray-300">
             © ASEL 2023. All Rights Reserved.
           </p>
         </div>
