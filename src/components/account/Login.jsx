@@ -11,6 +11,17 @@ const Login = () => {
     password: "",
     email: "",
   });
+  const areFieldsEmpty = () => {
+    return !user.username.trim() || !user.email.trim() || !user.password.trim();
+  };
+
+  const handleLogin = () => {
+    if (areFieldsEmpty()) {
+      alert("Please fill all fields");
+    } else {
+      dispatch(loginAccount({ user, navigate }));
+    }
+  };
 
   const { loading, status } = useSelector((state) => state.account);
 
@@ -88,7 +99,7 @@ const Login = () => {
 
                   <button
                     className="w-full text-center py-3 bg-blue-900 text-white font-light uppercase hover:bg-blue-950 my-5"
-                    onClick={() => dispatch(loginAccount({ user, navigate }))}
+                    onClick={() => dispatch(handleLogin)}
                   >
                     login
                   </button>

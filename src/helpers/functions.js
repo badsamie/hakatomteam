@@ -38,9 +38,21 @@ export const getAuthUser = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   return user;
 };
+// !admin
+export const checkAdminLogin = () => {
+  const user = getAuthUser();
+  if (user === "samagan") return true;
+  return false;
+};
+export const getAuthAdmin = () => {
+  const admin = JSON.parse(localStorage.getItem("admin"));
+  return admin;
+};
+// !admin
+
 export const getTotalPages = async (url) => {
   const { data } = await axios.get(url);
-  const totalPages = Math.ceil(data.length / 4);
+  const totalPages = Math.ceil(data.length / 6);
   return totalPages;
 };
 export const getProductRating = (productObj) => {

@@ -7,7 +7,11 @@ import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import PersonOffIcon from "@mui/icons-material/PersonOff";
-import { logout, checkUserLogin } from "../../helpers/functions";
+import {
+  logout,
+  checkUserLogin,
+  checkAdminLogin,
+} from "../../helpers/functions";
 import MicIcon from "@mui/icons-material/Mic";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchVal } from "../../store/products/productSlice";
@@ -95,7 +99,7 @@ const Navbar = () => {
           <div className="flex space-x-4">
             <a onClick={() => navigate("/")}>Ｈｏｍｅ</a>
             <a onClick={() => navigate("/products")}>Ｐｒｏｄｕｃｔｓ</a>
-            {checkUserLogin() && (
+            {checkAdminLogin() && (
               <a onClick={() => navigate("/product-create")}>Ｃｒｅａｔｅ</a>
             )}
           </div>
