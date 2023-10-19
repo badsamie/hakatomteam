@@ -32,7 +32,6 @@ const Speach = () => {
     setSearchValue(value);
   };
   useEffect(() => {
-    // Устанавливаем recognizedText как начальное значение в поле ввода
     setSearchValue(recognizedText);
   }, [recognizedText]);
 

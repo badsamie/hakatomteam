@@ -30,6 +30,7 @@ import {
   ShoppingBagOutlined,
 } from "@mui/icons-material";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
+import QrPage from "../qr/QrPage";
 
 const ProductDetails = () => {
   const { loading, oneProduct } = useSelector((state) => state.products);
@@ -138,6 +139,7 @@ const ProductDetails = () => {
                       <BookmarkAddOutlined className="md:w-6 md:h-6 w-8 h-8" />
                     )}
                   </button>
+                  <QrPage />
                 </div>
                 {checkUserLogin() && <CommentCreate product={oneProduct} />}
                 {oneProduct.comments ? (

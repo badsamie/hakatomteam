@@ -115,7 +115,7 @@ const Navbar = () => {
                 navigate("/products");
               }}
             />
-             <Sound  />
+            <Sound />
             {checkUserLogin() ? (
               <>
                 <PersonOffIcon

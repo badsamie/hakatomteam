@@ -9,6 +9,8 @@ export const addDataToLocalStorage = (user, tokens) => {
 export const logout = () => {
   localStorage.removeItem("user");
   localStorage.removeItem("tokens");
+  localStorage.removeItem("cart");
+  localStorage.removeItem("favorites");
 };
 
 export const checkUserLogin = () => {

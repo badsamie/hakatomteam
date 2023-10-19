@@ -12,6 +12,7 @@ import CartPage from "../pages/CartPage";
 import Favorites from "../components/favorites/Favorites";
 import Slider from "../pages/sabina/Slider";
 import Sound from "../components/games/Sound";
+import QrPage from "../components/qr/QrPage";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -75,6 +76,11 @@ const MainRoutes = () => {
       id: 13,
       path: "/sound",
       element: <Sound />,
+    },
+    {
+      id: 14,
+      path: "/qr",
+      element: <QrPage />,
     },
   ];
 

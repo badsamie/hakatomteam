@@ -29,7 +29,7 @@ export const countCartTotalCost = (cartProducts) => {
   }, 0);
 };
 
-export const toggleProductToCart = (productObj) => { 
+export const toggleProductToCart = (productObj) => {
   const cart = getCartData();
   if (!checkProductInCart(productObj.id)) {
     cart.products.push({
@@ -46,9 +46,9 @@ export const toggleProductToCart = (productObj) => {
   setCartData(cart);
 };
 
-
-export const changeCountProductInCart = (productId, count) => {   //
-  if (count < 0) return alert("Count of product must be positive int!");
+export const changeCountProductInCart = (productId, count) => {
+  //
+  if (count < 0) return alert("Должна быть больше!");
   const cart = getCartData();
   cart.products = cart.products.map((product) => {
     if (product.productItem.id === productId) {
@@ -69,17 +69,19 @@ export const deleteProductFromCart = (productId) => {
   setCartData(cart);
 };
 
-export const cleanCart = () => {  //
+export const cleanCart = () => {
+  //
   localStorage.removeItem("cart");
 };
 
-export const getProductsCountInCart = () => { //
+export const getProductsCountInCart = () => {
+  //
   const cart = getCartData();
   return cart.products.length;
 };
 
-
-export const createOrder = createAsyncThunk("cart/createOrder", async () => { ///
+export const createOrder = createAsyncThunk("cart/createOrder", async () => {
+  ///
   const cart = getCartData();
   if (!cart.products.length) return;
   await axios.post(ORDERS_API, cart);

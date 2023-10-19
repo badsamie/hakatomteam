@@ -15,11 +15,10 @@ export const setFavoritesData = (favoritesObj) => {
 };
 export const checkProductInFavorites = (productId) => {
   const favorites = getFavoritesData();
-  return favorites.products.some(
+  return favorites.products.find(
     (product) => product.productItem.id === productId
   );
 };
-
 
 export const deleteProductFromFavorites = (productId) => {
   const favorites = getFavoritesData();
